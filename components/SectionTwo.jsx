@@ -17,7 +17,7 @@ const SectionTwo = ({ domain }) => {
         </Row>
         <Row className='justify-content-center text-center mb-4'>
           <Col md={7}>
-            <p>
+            <p className='lead'>
               is part of the AgentDao framework, a network of autonomous smart agents built on URLs that build, manage, and monetize a network of specialized and personalized agents.
             </p>
           </Col>
