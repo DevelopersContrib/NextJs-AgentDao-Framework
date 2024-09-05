@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Navigation from '../components/Navigation';
+import SectionTwo from "../components/SectionTwo";
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import { getData, getDomain, getScript } from '../lib/data';
@@ -25,56 +26,12 @@ export default async function Home() {
             <div className="col-xl-12 tw-text-center">
               <Logo domain={domain} logo={c.data.logo} />
             </div>
-          </div>
-          <div className="row gy-3 gx-md-3">
-            <div className="col-xl-4">
-              <div className="tw-bg-white tw-p-8 tw-text-center tw-rounded-md tw-text-black">
-                <h3 className="mb-0 tw-uppercase tw-text-3xl tw-font-medium">
-                  Buy
-                </h3>
-                <h4 className="tw-flex tw-mb-5 tw-flex-col tw-text-lg tw-font-medium tw-text-gray-500">
-                  {domain}
-                </h4>
-                <div className="mb-3 d-grid">
-                  <Link href="/buy" className="btn btn-primary btn-lg"> Make An Offer </Link>
-                </div>
-                <p>Invest in a premium domain <br /> name to be your brand. </p>
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="tw-bg-white tw-p-8 tw-text-center tw-rounded-md tw-text-black">
-                <h3 className="mb-0 tw-uppercase  tw-text-3xl tw-font-medium">
-                  PARTNER
-                </h3>
-                <h4 className="tw-flex tw-mb-5 tw-flex-col tw-text-lg tw-font-medium tw-text-gray-500">
-                  {domain}
-                </h4>
-                <div className="mb-3 d-grid">
-                  <Link href="/partner" className="btn btn-primary btn-lg"> Submit Partnership </Link>
-                </div>
-                <p>Access this premium domain name without the premium price tag. </p>
-              </div>
-            </div>
-            <div className="col-xl-4">
-              <div className="tw-bg-white tw-p-8 tw-text-center tw-rounded-md tw-text-black">
-                <h3 className="mb-0 tw-uppercase  tw-text-3xl tw-font-medium">
-                  JOIN
-                </h3>
-                <h4 className="tw-flex tw-mb-5 tw-flex-col tw-text-lg tw-font-medium tw-text-gray-500">
-                  {domain} Community
-                </h4>
-                <div className="mb-3 d-grid">
-                  <a target="_blank" href={"https://www.contrib.com/signup/firststep?domain="+domain} className="btn btn-primary btn-lg"> Join Now </a>
-                </div>
-                <p>Join our community of 150,000 <br /> {domain} members over at Contrib.</p>
-              </div>
-            </div>
-          </div>
-          <Ai />
-          
+          </div>          
+          <Ai />                    
         </div>
       </section>
       <ScriptLoader html={html.data.content} />
+      <SectionTwo domain={domain} />
       <Footer domain={domain} />
     </>
   )
