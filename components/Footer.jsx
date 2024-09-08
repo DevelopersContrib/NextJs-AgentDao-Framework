@@ -5,8 +5,8 @@ import { faHouse,faBookmark,faBook,faCube } from '@fortawesome/free-solid-svg-ic
 const Footer = ({domain}) => {
   
   return (
-    <footer className="tw-text-white tw-bg-black tw-py-6">
-      <div className="container">
+    <footer className="tw-text-white tw-bg-black tw-py-6 px-5">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-xl-6">
             &copy; {new Date().getFullYear()} {domain}. All Rights Reserved.

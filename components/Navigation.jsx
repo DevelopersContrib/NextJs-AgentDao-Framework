@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const navigation = ({domain}) => {
   
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
