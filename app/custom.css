@@ -34,6 +34,9 @@ body {
   .left-col-style {
     border-right: none !important;
   }
+  .tw-text-5xl {
+    font-size: 2.55rem;
+  }
 }
 
 .ai-script #m0ot7uu12a5q2 {

@@ -31,7 +31,7 @@ export default async function Home() {
         <div className="container-fluid d-flex align-items-center justify-content-center">
           <div className="row w-100 d-flex align-items-center justify-content-center">
             <div 
-              className="col-lg-5 d-flex flex-column justify-content-center align-items-start left-col-style"
+              className="col-lg-5 justify-content-center align-items-start left-col-style"
             >
               <div className="custom-v-padding text-start ps-3">
                 <Logo domain={domain} logo={c.data.logo} />

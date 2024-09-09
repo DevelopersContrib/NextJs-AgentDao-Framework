@@ -13,7 +13,7 @@ const SectionTwo = ({ domain }) => {
         </div>
         <div className="py-5">
           <Row className='justify-content-center py-5 px-4'>
-            <Col md='5'>
+            <Col md='6'>
               <h2 className='mb-0 py-5'>
                 This platform is a part of the AgentDao framework, a cutting-edge network of autonomous smart agents built on URL structures. These agents are designed to efficiently create, manage, and monetize a comprehensive network of highly specialized, personalized services, delivering innovative solutions tailored to various business needs.
               </h2>
