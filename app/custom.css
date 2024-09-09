@@ -1,17 +1,87 @@
-/* Default padding for larger screens */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+body {
+  overflow-x: hidden;
+}
+
+.container-style {
+  background-color: #ffffff;
+  background-size: cover;
+  color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-col-style {
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .custom-v-padding {
-    padding: 15rem 0rem !important;
+  padding: 1rem 0rem;
+}
+
+@media (max-width: 768px) {
+  .custom-v-padding {
+    padding: 1rem 0rem;
   }
-  
-  /* Adjusted padding for mobile view */
-  @media (max-width: 768px) {
-    .custom-v-padding {
-      padding: 1rem 0rem !important;
-    }
-  
-    /* Remove vertical borders in mobile view */
-    .column-border {
-      border-right: none !important;
-    }
+  .left-col-style {
+    border-right: none !important;
   }
-  
+}
+
+.ai-script #m0ot7uu12a5q2 {
+  display: none !important;
+}
+
+.section-two {
+  background-color: #fff;
+  color: #fff;
+}
+
+.custom-card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 0px;
+  border: 0;
+  height: 350px;
+}
+
+.column-border {
+  border-right: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+
+.column-border-last {
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+
+.icon-bg {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: #424040;
+}
+
+.partner-icon {
+  background-color: #afdae8;
+}
+
+.join-icon {
+  background-color: #91f091;
+}
+
+.inquire-icon {
+  background-color: #f5d498;
+}
