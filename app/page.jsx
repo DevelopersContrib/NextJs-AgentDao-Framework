@@ -28,8 +28,8 @@ export default async function Home() {
         className="container-style" 
         style={{ backgroundImage: `url('${background}')` }}
       >
-        <div className="container-fluid d-flex align-items-center justify-content-center">
-          <div className="row w-100 d-flex align-items-center justify-content-center">
+        <div className="container-fluid d-flex1 align-items-center justify-content-center">
+          <div className="row w-100 d-flex1 align-items-center justify-content-center">
             <div 
               className="col-lg-5 justify-content-center align-items-start left-col-style"
             >
