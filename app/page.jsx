@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Navigation from '../components/Navigation';
 import SectionTwo from "../components/SectionTwo";
@@ -54,7 +55,15 @@ export default async function Home() {
                 <p className="text-center">
                   is part of the AgentDao framework, a network of autonomous smart agents built on URLs that build, manage, and monetize a network of specialized and personalized agents.
                 </p>
+                <div className="text-center mt-4">
+                  <img 
+                    src="https://agentdao.com/images/logo/logo-AgentDao-onblack.svg" 
+                    alt="AgentDao Logo" 
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
               </div>
+
             </div>
             <div className="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center py-5">
               <Ai />
