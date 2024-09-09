@@ -8,7 +8,7 @@ import { faHandshake, faUsers, faQuestionCircle } from '@fortawesome/free-solid-
 const SectionTwo = ({ domain }) => {
   return (
     <section className='section-two'>
-      <Container fluid>
+      <Container fluid className='p-0'>
         <Row className='g-0'>
           <Col md={4} className="d-flex flex-column justify-content-center">
             <div className="column-border">

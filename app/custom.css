@@ -1,0 +1,17 @@
+/* Default padding for larger screens */
+.custom-v-padding {
+    padding: 15rem 0rem !important;
+  }
+  
+  /* Adjusted padding for mobile view */
+  @media (max-width: 768px) {
+    .custom-v-padding {
+      padding: 1rem 0rem !important;
+    }
+  
+    /* Remove vertical borders in mobile view */
+    .column-border {
+      border-right: none !important;
+    }
+  }
+  

@@ -7,6 +7,7 @@ import Logo from '../components/Logo';
 import { getData, getDomain, getScript } from '../lib/data';
 import Ai from '../components/Ai';
 import ScriptLoader from '../components/ScriptLoader';
+import './custom.css';
 
 export default async function Home() {
   const c = await getData();
@@ -34,21 +35,17 @@ export default async function Home() {
     borderRight: "1px solid #353532"
   };
 
-  const customVPaddingStyle = {
-    padding: '15rem 0rem'
-  };
-
   return (
     <>
       <Navigation domain={domain} />
       <section style={containerStyle}>
-        <div className="container-fluid">
+        <div className="container-fluid p-0">
           <div className="row">
-            <div 
-              className="col-lg-6 d-flex flex-column justify-content-center align-items-center p-5" 
+          <div 
+              className="col-lg-6 d-flex flex-column justify-content-center align-items-center p-5 remove-border-mobile"
               style={leftColStyle}
             >
-              <div style={customVPaddingStyle}>
+              <div className="custom-v-padding">
                 <div className="text-center mb-4">
                   <Logo domain={domain} logo={c.data.logo} />
                 </div>
@@ -63,7 +60,6 @@ export default async function Home() {
                   />
                 </div>
               </div>
-
             </div>
             <div className="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center py-5">
               <Ai />
