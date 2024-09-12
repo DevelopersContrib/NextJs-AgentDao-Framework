@@ -29,6 +29,12 @@ body {
   font-size: 2rem;
 }
 
+.tw-text-xxxl {
+  font-size: 5rem;
+  line-height: 1;
+  color: #0F3650;
+}
+
 @media (max-width: 768px) {
   .custom-v-padding {
     padding: 1rem 0rem;

@@ -10,7 +10,7 @@ export default function Logo({domain,logo}) {
               height={300}
               alt=""
               className='d-inline-flex img-fluid mb-3'
-            /> : <h1 className="tw-text-5xl font-800 text-capitalize">{domain}</h1>
+            /> : <h1 className="tw-text-xxxl font-800 text-capitalize">{domain}</h1>
       }
       <p className="tw-text-2xl">
         <a href="https://contrib.com/" className="tw-no-underline text-primary">
