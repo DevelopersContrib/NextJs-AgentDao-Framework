@@ -3,7 +3,7 @@ import Link from "next/link"
 const Footer = ({ domain }) => {
   return (
     <footer className="tw-text-white tw-bg-black tw-py-6 px-3">
-      <div className="container-fluid">
+      <div className="container">
         {/* New Top Section */}
         <div className="row mb-5 pt-5">
           <div className="col-md-3">

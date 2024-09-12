@@ -2,12 +2,12 @@
 import Link from "next/link";
 import Navigation from '../components/Navigation';
 import SectionTwo from '../components/SectionTwo';
+import SectionThree from '../components/SectionThree';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import { getData, getDomain, getScript } from '../lib/data';
-import Ai from '../components/Ai';
 import ScriptLoader from '../components/ScriptLoader';
-import './custom.css';  // Importing the custom CSS file
+import './custom.css';
 
 export default async function Home() {
   const c = await getData();
@@ -26,19 +26,23 @@ export default async function Home() {
       <Navigation domain={domain} />
       <section 
         className="container-style" 
-        style={{ backgroundImage: `url('${background}')` }}
+        style={{ 
+          backgroundImage: `linear-gradient(to right, rgb(255, 222, 89), rgb(12, 192, 223) 30%, rgba(255, 222, 89, 0)), url('${background}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
-        <div className="container-fluid d-flex1 align-items-center justify-content-center">
+        <div className="container d-flex1 align-items-center justify-content-center">
           <div className="row w-100 d-flex1 align-items-center justify-content-center">
             <div 
-              className="col-lg-5 justify-content-center align-items-start left-col-style"
+              className="col-lg-10 justify-content-center align-items-start left-col-style"
             >
-              <div className="custom-v-padding text-start ps-3">
+              <div className="custom-v-padding text-center ps-3">
                 <Logo domain={domain} logo={c.data.logo} />
-                <p className="mt-0">
-                  is part of the AgentDao framework, a network of autonomous smart agents built on URLs that build, manage, and monetize a network of specialized and personalized agents.
+                <p className="mt-0 hero-lead">
+                  <span className="text-capitalize">{domain}</span> is part of the AgentDao framework, a network of autonomous smart agents built on URLs that build, manage, and monetize a network of specialized and personalized agents.
                 </p>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center text-center mx-auto" style={{width:'380px'}}>
                   <div className="d-flex me-3">
                     <img 
                       alt="User 1" 
@@ -83,7 +87,7 @@ export default async function Home() {
                       src="https://cdn.vnoc.com/images/users/user7.jpg"
                     />
                   </div>
-                  <div className="ps-4">
+                  <div className="ps-2">
                     <p className="mb-0 small">Trusted by</p>
                     <p className="mb-0 fw-bold"><span>18,000</span> +</p>
                   </div>
@@ -96,15 +100,13 @@ export default async function Home() {
                   />
                 </div>
               </div>
-            </div>
-            <div className="col-lg-7 d-flex flex-column justify-content-center align-items-center text-center py-5">
-              <Ai />
-            </div>
+            </div>            
           </div>
         </div>
       </section>
       <ScriptLoader html={html.data.content} />
       <SectionTwo domain={domain} />
+      <SectionThree />
       <Footer domain={domain} />
     </>
   );

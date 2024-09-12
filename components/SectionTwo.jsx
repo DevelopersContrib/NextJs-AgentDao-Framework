@@ -7,30 +7,12 @@ import '../app/custom.css';
 const SectionTwo = ({ domain }) => {
   return (
     <section className='section-two'>
-      <section className="info-section text-center" style={{ color: 'black' }}>
-        <div className="border-top border-bottom py-3" style={{ borderColor: '#d2d5db' }}>
-          <h3 className='mb-0'>What is {domain}?</h3>
-        </div>
-        <div className="py-5">
-          <Row className='justify-content-center py-5 px-4'>
-            <Col md='6'>
-              <h2 className='mb-0 py-5'>
-                This platform is a part of the AgentDao framework, a cutting-edge network of autonomous smart agents built on URL structures. These agents are designed to efficiently create, manage, and monetize a comprehensive network of highly specialized, personalized services, delivering innovative solutions tailored to various business needs.
-              </h2>
-            </Col>
-          </Row>
-        </div>
-        <div className="border-top py-3" style={{ borderColor: '#d2d5db' }}>
-          <h3 className='mb-0'>How does it work?</h3>
-        </div>
-      </section>
-      
-      <Container fluid className='p-0'>        
-        <Row className='g-0'>
-          <Col md={4} className="d-flex flex-column justify-content-center">
-            <div className="column-border py-5" style={{ borderColor: '#d2d5db' }}>
-              <Card className='custom-card text-center1 p-4 mb-4'>
-                <Card.Body className='py-5'>
+      <Container className='py-5 mt-5'>        
+        <Row className=''>
+          <Col md={4} className="justify-content-center">
+            <div className="section-card">
+              <Card className='custom-card text-center1 mb-4'>
+                <Card.Body className='section-card-border'>
                   <div className="icon-bg partner-icon mb-3">
                     <i className="bi bi-textarea" style={{ fontSize: '2rem' }}></i>
                   </div>
@@ -45,10 +27,10 @@ const SectionTwo = ({ domain }) => {
               </Card>
             </div>
           </Col>
-          <Col md={4} className="d-flex flex-column justify-content-center">
-            <div className="column-border py-5" style={{ borderColor: '#d2d5db' }}>
-              <Card className='custom-card text-center1 p-4 mb-4'>
-                <Card.Body className='py-5'>
+          <Col md={4} className="justify-content-center">
+            <div className="section-card">
+              <Card className='custom-card text-center1 mb-4'>
+                <Card.Body className='section-card-border'>
                   <div className="icon-bg join-icon mb-3">
                     <i className="bi bi-bounding-box" style={{ fontSize: '2rem' }}></i>
                   </div>
@@ -63,10 +45,10 @@ const SectionTwo = ({ domain }) => {
               </Card>
             </div>
           </Col>
-          <Col md={4} className="d-flex flex-column justify-content-center">
-            <div className="column-border-last py-5" style={{ borderColor: '#d2d5db' }}>
-              <Card className='custom-card text-center1 p-4 mb-4'>
-                <Card.Body className='py-5'>
+          <Col md={4} className="justify-content-center">
+            <div className="section-card">
+              <Card className='custom-card text-center1 mb-4'>
+                <Card.Body className='section-card-border'>
                   <div className="icon-bg inquire-icon mb-3">
                     <i className="bi bi-question-square" style={{ fontSize: '2rem' }}></i>
                   </div>

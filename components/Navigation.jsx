@@ -8,10 +8,10 @@ const navigation = ({domain}) => {
   
   return (
     <Navbar variant="dark" expand="lg" className='tw-bg-black'>
-      <Container fluid className='mx-3'>
+      <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto1">
+          <Nav className="mx-auto">
             <Link href="/" className='nav-link'>
               Home
             </Link>

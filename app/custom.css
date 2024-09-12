@@ -25,6 +25,10 @@ body {
   padding: 1rem 0rem;
 }
 
+.hero-lead {
+  font-size: 2rem;
+}
+
 @media (max-width: 768px) {
   .custom-v-padding {
     padding: 1rem 0rem;
@@ -51,7 +55,11 @@ body {
   color: #000;
   border-radius: 0px;
   border: 0;
-  height: 350px;
+  height: 320px;
+}
+
+.card-shadow {
+  box-shadow:rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;  
 }
 
 .column-border {
@@ -85,4 +93,10 @@ body {
 
 .inquire-icon {
   background-color: #f5d498;
+}
+
+.section-card-border {
+  padding: 32px;
+  box-shadow:rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;
+  border-radius: 6px;
 }
