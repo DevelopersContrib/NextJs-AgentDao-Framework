@@ -34,11 +34,11 @@ const SectionThree = () => {
                     alt={feature.title}
                     width={40}
                     height={40}
-                    className="me-2"
+                    className="me-2 feature-image-logo"
                   />
-                  <h5 className="card-title mb-0">{feature.title}</h5>
+                  <h5 className="card-title feature-title mb-0">{feature.title}</h5>
                 </div>
-                <p className="card-text">{feature.description}</p>
+                <p className="card-text feature-description">{feature.description}</p>
               </div>
             </div>
           </div>

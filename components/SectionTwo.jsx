@@ -16,8 +16,8 @@ const SectionTwo = ({ domain }) => {
                   <div className="icon-bg partner-icon mb-3">
                     <i className="bi bi-textarea" style={{ fontSize: '2rem' }}></i>
                   </div>
-                  <Card.Title>Partner</Card.Title>
-                  <Card.Text>
+                  <Card.Title className='sec-two-card-title'>Partner</Card.Title>
+                  <Card.Text className='sec-two-card-description'>
                     Become a partner and grow with us. Collaborate to create innovative solutions and drive mutual success.
                   </Card.Text>
                   <Link href={`https://domaindirectory.com/servicepage/?domain=${domain}`} passHref>
