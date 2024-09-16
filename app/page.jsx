@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navigation from '../components/Navigation';
 import SectionTwo from '../components/SectionTwo';
 import SectionThree from '../components/SectionThree';
+import SectionFour from '../components/SectionFour';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import { getData, getDomain, getScript } from '../lib/data';
@@ -20,6 +21,28 @@ export default async function Home() {
     "https://e7lq80c199.execute-api.us-west-2.amazonaws.com/api1?key=5c1bde69a9e783c7edc2e603d8b25023&request=getcontent&url=" 
     + encodeURIComponent(domain)
   );
+
+  const blogs = [
+    {
+      title: "Building a Scalable Network",
+      excerpt: "Learn how to build scalable network infrastructures for future growth.",
+      url: "/blog/building-a-scalable-network",
+      imageUrl: "https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg",
+    },
+    {
+      title: "Managing Your Business Efficiently",
+      excerpt: "Best practices for managing your business efficiently in the digital age.",
+      url: "/blog/managing-your-business",
+      imageUrl: "https://images.pexels.com/photos/8127702/pexels-photo-8127702.jpeg",
+    },
+    {
+      title: "Monetization Strategies for 2024",
+      excerpt: "Top monetization strategies for the coming year.",
+      url: "/blog/monetization-strategies-2024",
+      imageUrl: "https://images.pexels.com/photos/3931446/pexels-photo-3931446.jpeg",
+    },
+  ];
+ 
 
   return (
     <>
@@ -107,6 +130,7 @@ export default async function Home() {
       <ScriptLoader html={html.data.content} />
       <SectionTwo domain={domain} />
       <SectionThree />
+      <SectionFour blogs={blogs} />
       <Footer domain={domain} />
     </>
   );
