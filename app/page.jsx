@@ -26,19 +26,19 @@ export default async function Home() {
     {
       title: "Building a Scalable Network",
       excerpt: "Learn how to build scalable network infrastructures for future growth.",
-      url: "/blog/building-a-scalable-network",
+      url: "/",
       imageUrl: "https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg",
     },
     {
       title: "Managing Your Business Efficiently",
       excerpt: "Best practices for managing your business efficiently in the digital age.",
-      url: "/blog/managing-your-business",
+      url: "/",
       imageUrl: "https://images.pexels.com/photos/8127702/pexels-photo-8127702.jpeg",
     },
     {
       title: "Monetization Strategies for 2024",
       excerpt: "Top monetization strategies for the coming year.",
-      url: "/blog/monetization-strategies-2024",
+      url: "/",
       imageUrl: "https://images.pexels.com/photos/3931446/pexels-photo-3931446.jpeg",
     },
   ];
