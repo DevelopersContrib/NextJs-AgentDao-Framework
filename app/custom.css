@@ -106,3 +106,8 @@ body {
   box-shadow:rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;
   border-radius: 6px;
 }
+
+.feature-title a {
+  text-decoration: none;
+}
+

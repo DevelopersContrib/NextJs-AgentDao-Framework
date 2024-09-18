@@ -26,22 +26,27 @@ const SectionThree = () => {
       <div className="row">
         {featuresData.slice(0, visibleCount).map((feature) => (
           <div key={feature.id} className="col-md-3 mb-4">
-            <div className="card h-100 bg-white border-0 card-shadow">
-              <div className="card-body text-start">
-                <div className="d-flex align-items-center justify-content-start mb-3">
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    width={40}
-                    height={40}
-                    className="me-2 feature-image-logo"
-                  />
-                  <h5 className="card-title feature-title mb-0">{feature.title}</h5>
-                </div>
-                <p className="card-text feature-description">{feature.description}</p>
+          <div className="card h-100 bg-white border-0 card-shadow">
+            <div className="card-body text-start">
+              <div className="d-flex align-items-center justify-content-start mb-3">
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  width={40}
+                  height={40}
+                  className="me-2 feature-image-logo"
+                />
+                <h5 className="card-title feature-title mb-0">
+                  <a href={feature.link} target="_blank" rel="noopener noreferrer">
+                    {feature.title}
+                  </a>
+                </h5>
               </div>
+              <p className="card-text feature-description">{feature.description}</p>
             </div>
           </div>
+        </div>
+        
         ))}
       </div>
 
