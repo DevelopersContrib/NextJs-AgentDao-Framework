@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import { getData, getDomain, getScript } from '../lib/data';
 import ScriptLoader from '../components/ScriptLoader';
+import Script from 'next/script';
 import './custom.css';
 
 export default async function Home() {
@@ -16,7 +17,7 @@ export default async function Home() {
   const background = c.data.background_url !== null 
     ? c.data.background_url 
     : 'https://cdn.vnoc.com/images/agent-bg.png';
-  
+
   const html = await getScript(
     "https://e7lq80c199.execute-api.us-west-2.amazonaws.com/api1?key=5c1bde69a9e783c7edc2e603d8b25023&request=getcontent&url=" 
     + encodeURIComponent(domain)
@@ -42,7 +43,6 @@ export default async function Home() {
       imageUrl: "https://images.pexels.com/photos/3931446/pexels-photo-3931446.jpeg",
     },
   ];
- 
 
   return (
     <>
@@ -57,58 +57,23 @@ export default async function Home() {
       >
         <div className="container d-flex1 align-items-center justify-content-center">
           <div className="row w-100 d-flex1 align-items-center justify-content-center">
-            <div 
-              className="col-lg-10 justify-content-center align-items-start left-col-style"
-            >
-              <div className="custom-v-padding text-center ps-3">
+            <div className="col-lg-6 justify-content-center align-items-start left-col-style">
+              <div className="custom-v-padding text-center1 ps-3">
                 <Logo domain={domain} logo={c.data.logo} />
                 <p className="mt-0 hero-lead">
                   <span className="text-capitalize">{domain}</span> is part of the AgentDao framework, a network of autonomous smart agents built on URLs that build, manage, and monetize a network of specialized and personalized agents.
                 </p>
-                <div className="d-flex align-items-center text-center mx-auto" style={{width:'380px'}}>
+                <div className="d-flex align-items-center text-center1 mx-auto1" style={{ width: '380px' }}>
                   <div className="d-flex me-3">
-                    <img 
-                      alt="User 1" 
-                      className="rounded-circle border border-white" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user1.jpg"
-                    />
-                    <img 
-                      alt="User 2" 
-                      className="rounded-circle border border-white ms-n3" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user2.jpg"
-                    />
-                    <img 
-                      alt="User 3" 
-                      className="rounded-circle border border-white ms-n3" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user3.jpg"
-                    />
-                    <img 
-                      alt="User 4" 
-                      className="rounded-circle border border-white ms-n3" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user4.jpg"
-                    />
-                    <img 
-                      alt="User 5" 
-                      className="rounded-circle border border-white ms-n3" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user5.jpg"
-                    />
-                    <img 
-                      alt="User 6" 
-                      className="rounded-circle border border-white ms-n3" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user6.jpg"
-                    />
-                    <img 
-                      alt="User 7" 
-                      className="rounded-circle border border-white ms-n3" 
-                      style={{ width: "40px", height: "40px", objectFit: "cover" }} 
-                      src="https://cdn.vnoc.com/images/users/user7.jpg"
-                    />
+                    {Array.from({ length: 7 }, (_, i) => (
+                      <img 
+                        key={i}
+                        alt={`User ${i + 1}`} 
+                        className="rounded-circle border border-white ms-n3" 
+                        style={{ width: "40px", height: "40px", objectFit: "cover" }} 
+                        src={`https://cdn.vnoc.com/images/users/user${i + 1}.jpg`}
+                      />
+                    ))}
                   </div>
                   <div className="ps-2">
                     <p className="mb-0 small">Trusted by</p>
@@ -123,7 +88,12 @@ export default async function Home() {
                   />
                 </div>
               </div>
-            </div>            
+            </div>
+            <div className="col-lg-6">
+              <div className="leadForm">
+                <Script src={`http://www.manage.vnoc.com/widgets/leads?domain=${domain}&c=black`} strategy="lazyOnload"/>
+              </div>
+            </div>          
           </div>
         </div>
       </section>
