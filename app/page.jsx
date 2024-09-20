@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import SectionTwo from '../components/SectionTwo';
 import SectionThree from '../components/SectionThree';
 import SectionFour from '../components/SectionFour';
+import Ai from '../components/Ai';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import { getData, getDomain, getScript } from '../lib/data';
@@ -91,7 +92,7 @@ export default async function Home() {
             </div>
             <div className="col-lg-6">
               <div className="leadForm">
-                <Script src={`http://www.manage.vnoc.com/widgets/leads?domain=${domain}&c=black`} strategy="lazyOnload"/>
+                <Ai/>
               </div>
             </div>          
           </div>
