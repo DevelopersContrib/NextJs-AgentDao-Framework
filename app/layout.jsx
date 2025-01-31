@@ -1,6 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
+import './custom.css';
 import { getData, getDomain } from '../lib/data';
 import Script from 'next/script';
 
@@ -56,7 +57,7 @@ export default async function RootLayout({ children }) {
         <Script id="test-script" src="https://tools.contrib.com/js/test.js"></Script>
         */}
       </head>
-      <body>
+      <body className="animated-bg tw-text-white">
         {children}
       </body>
     </html>
