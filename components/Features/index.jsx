@@ -77,7 +77,7 @@ const features = [
 const Features = () => {
   return (
     <section className="tw-bg-gray-9001 tw-text-white tw-py-16">
-      <div className="tw-container tw-mx-auto tw-text-center">
+      <div className="tw-container tw-mx-auto tw-text-center tw-w-4/5">
         <h2 className="tw-text-3xl tw-font-extrabold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text mb-4">
           Key Features
         </h2>

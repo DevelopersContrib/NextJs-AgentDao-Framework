@@ -10,6 +10,10 @@ body{
   font-family: 'Inter', sans-serif !important;
 }
 
+a {
+  text-decoration: none !important; color : inherit;
+}
+
 h1,.h1,
 h2,.h2,
 h3,.h3,
@@ -37,3 +41,7 @@ h6,.h6{
 .font-800{
   font-weight: 800 !important;
 }
+
+html {
+    scroll-behavior: smooth;
+  }

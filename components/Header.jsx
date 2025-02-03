@@ -1,52 +1,50 @@
 "use client";
-import { useState } from "react";
+import React from 'react';
+import { User, ShoppingCart } from 'lucide-react';
 import Link from "next/link";
 
-const Header = ({ domain }) => {
-  const [showTopHeader, setShowTopHeader] = useState(true);
-
+const Header = ({ domain, setShowTopHeader }) => {
   return (
     <header>
-      {showTopHeader && (
-        <div className="tw-bg-black tw-text-white tw-text-sm tw-py-2 tw-flex tw-justify-between tw-items-center tw-px-4 lg:tw-px-8">
-          <div>
-            <a
-              href="https://agentdao.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tw-text-blue-400 tw-font-semibold hover:tw-underline"
-            >
-              Powered by AgentDao
-            </a>
-          </div>
+      <div className="tw-bg-yellow-400 tw-text-black tw-text-sm tw-py-2 tw-flex tw-justify-between tw-items-center tw-px-4 lg:tw-px-8">
+        <div>
+          <a
+            href="https://agentdao.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tw-text-blue-600 tw-font-semibold hover:tw-underline"
+          >
+            Powered by AgentDao
+          </a>
+        </div>
 
-          <div className="tw-flex tw-gap-4">
-            <a
-              href={`https://contrib.com/to/${domain}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tw-text-gray-300 hover:tw-text-white"
-            >
-              Register
-            </a>
-            <a
-              href="https://adao.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tw-text-gray-300 hover:tw-text-white"
-            >
-              Buy Adao
-            </a>
-          </div>
-
+        <div className="tw-flex tw-items-center tw-gap-4">
+          <Link
+            href={`https://contrib.com/to/${domain}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tw-flex tw-items-center tw-bg-black tw-text-white tw-px-3 tw-py-1 tw-rounded-md hover:tw-bg-gray-800 transition"
+          >
+            <User className="tw-w-4 tw-h-4 tw-mr-1" />
+            Register
+          </Link>
+          <Link
+            href="https://adao.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tw-flex tw-items-center tw-bg-black tw-text-white tw-px-3 tw-py-1 tw-rounded-md hover:tw-bg-gray-800 transition"
+          >
+            <ShoppingCart className="tw-w-4 tw-h-4 tw-mr-1" />
+            Buy Adao
+          </Link>
           <button
             onClick={() => setShowTopHeader(false)}
-            className="tw-text-gray-400 hover:tw-text-white tw-text-lg tw-font-bold"
+            className="tw-text-black hover:tw-text-white tw-text-lg tw-font-bold"
           >
             ✕
           </button>
         </div>
-      )}
+      </div>
 
       <nav className="tw-bg-black1 tw-text-white tw-py-4 tw-container tw-mx-auto tw-flex tw-justify-between tw-items-center">
         <div>

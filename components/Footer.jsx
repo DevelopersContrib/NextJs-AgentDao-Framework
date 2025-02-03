@@ -26,10 +26,11 @@ const Footer = ({ domain }) => {
                 </Link>
               </li>
               <li>
-                <Link href="/advertise" className="tw-text-gray-300 hover:tw-text-white">
+                <Link href={`https://advertise.ipartner.com/?domain=${domain}`} className="tw-text-gray-300 hover:tw-text-white">
                   Advertise
                 </Link>
               </li>
+
             </ul>
           </div>
 
@@ -43,15 +44,16 @@ const Footer = ({ domain }) => {
                 </Link>
               </li>
               <li>
-                <Link href="/partner" className="tw-text-gray-300 hover:tw-text-white">
+                <Link href="/contact" className="tw-text-gray-300 hover:tw-text-white">
                   Partner
                 </Link>
               </li>
               <li>
-                <Link href="/contribute" className="tw-text-gray-300 hover:tw-text-white">
+                <Link href={`https://contrib.com/to/${domain}`} className="tw-text-gray-300 hover:tw-text-white">
                   Contribute
                 </Link>
               </li>
+
             </ul>
           </div>
 

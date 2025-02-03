@@ -42,7 +42,7 @@ const Hero = () => {
           swap, and monetize your AI with AgentDAO’s Web3-powered ecosystem. Own the future of intelligent automation today!
         </p>
 
-        <form onSubmit={handleSubmit} className="tw-mt-6 tw-flex tw-justify-center">
+        <form id="getstarted" onSubmit={handleSubmit} className="tw-mt-6 tw-flex tw-justify-center">
           <input
             type="email"
             placeholder="Enter your email"

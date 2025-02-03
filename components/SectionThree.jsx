@@ -13,8 +13,8 @@ const SectionThree = () => {
 
   return (
     <section className="tw-py-16 tw-bg-gray-9001 tw-text-white">
-      <div className="tw-container tw-mx-auto tw-text-center">
-        <h2 className="tw-text-3xl tw-font-extrabold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
+      <div className="tw-container tw-mx-auto tw-w-4/5 tw-text-center">
+        <h2 className="tw-text-4xl tw-font-extrabold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
           Explore the Expanding AgentDAO Network
         </h2>
         <p className="tw-text-lg tw-text-gray-400 tw-mb-12 tw-max-w-3xl tw-mx-auto">

@@ -16,6 +16,8 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Revenue from "@/components/Revenue";
 import Cta from "@/components/Cta";
+import FomoPopup from "@/components/TokenSalePopup";
+
 
 export default async function Home() {
   const c = await getData();
@@ -37,6 +39,7 @@ export default async function Home() {
       <Revenue />
       <SectionThree />
       <Cta />
+      <FomoPopup />
       <Footer domain={domain} />
     </>
   );
