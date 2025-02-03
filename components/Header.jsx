@@ -1,11 +1,18 @@
 "use client";
+
 import React from 'react';
 import { User, ShoppingCart } from 'lucide-react';
 import Link from "next/link";
-import { getDomain } from '../lib/data';
+
+// Helper function to capitalize the first letter and remove the domain extension
+const capitalizeDomain = (domain) => {
+  if (!domain) return '';
+  const domainWithoutExtension = domain.split('.')[0]; // Remove the extension
+  return domainWithoutExtension.charAt(0).toUpperCase() + domainWithoutExtension.slice(1);
+};
 
 const Header = ({ domain, setShowTopHeader }) => {
-  const capitalizedDomain = domain.charAt(0).toUpperCase() + domain.slice(1);
+  const capitalizedDomain = capitalizeDomain(domain);
 
   return (
     <header>
@@ -51,8 +58,8 @@ const Header = ({ domain, setShowTopHeader }) => {
 
       <nav className="tw-bg-black1 tw-text-white tw-py-4 tw-container tw-mx-auto tw-flex tw-justify-between tw-items-center">
         <div>
-          <Link href="/">
-            <div className="tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
+          <Link href={`https://${domain}`} target="_blank" rel="noopener noreferrer">
+            <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
               {capitalizedDomain}
             </div>
           </Link>

@@ -33,7 +33,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header />    
+      <Header domain={domain}/>    
       <Hero />
       <Features />
       <Revenue />

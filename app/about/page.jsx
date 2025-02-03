@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <>
-      <Header />
+      <Header domain={domain}/>  
 
       <section className="tw-bg-black tw-text-white tw-py-16 tw-text-center">
         <div className="tw-container tw-mx-auto tw-px-4">

@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-buyandsell",
-  "version": "0.1.0",
+  "name": "nextjs-agentdao-template",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -21,7 +21,7 @@
     "eslint-config-next": "13.4.7",
     "framer-motion": "^12.0.6",
     "lucide-react": "^0.474.0",
-    "next": "13.4.7",
+    "next": "14.2.2",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
