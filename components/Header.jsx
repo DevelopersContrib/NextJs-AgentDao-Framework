@@ -2,8 +2,11 @@
 import React from 'react';
 import { User, ShoppingCart } from 'lucide-react';
 import Link from "next/link";
+import { getDomain } from '../lib/data';
 
 const Header = ({ domain, setShowTopHeader }) => {
+  const capitalizedDomain = domain.charAt(0).toUpperCase() + domain.slice(1);
+
   return (
     <header>
       <div className="tw-bg-yellow-400 tw-text-black tw-text-sm tw-py-2 tw-flex tw-justify-between tw-items-center tw-px-4 lg:tw-px-8">
@@ -50,7 +53,7 @@ const Header = ({ domain, setShowTopHeader }) => {
         <div>
           <Link href="/">
             <div className="tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
-              {domain || "AgentDAO"}
+              {capitalizedDomain}
             </div>
           </Link>
         </div>
