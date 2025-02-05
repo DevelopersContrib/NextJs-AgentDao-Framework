@@ -10,16 +10,27 @@ export function getDomain() {
 }
 
 export async function getData() {
-  const domain = getDomain();
-  const url = process.env.CONTRIB_API1+`&domain=${domain}`
-  const res = await fetch(url, { next: { revalidate: 3600 } });
-  
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+  try {
+    const domain = getDomain();
+    const url = process.env.NEXT_PUBLIC_CONTRIB_API1 + `&domain=${domain}`;
+
+    console.log("Fetching data from:", url);
+
+    const res = await fetch(url, { next: { revalidate: 3600 } });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error("API Error:", res.status, errorText);
+      return { data: {} };
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch Error:", error);
+    return { data: {} };
   }
-  
-  return res.json()
 }
+
 
 export async function getScript(url) {
   try{

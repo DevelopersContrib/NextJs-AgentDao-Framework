@@ -33,7 +33,7 @@ const featuresData = [
   },
   {
     id: 5,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-socialagent1.png",
     image: "",
     title: "SocialAgent",
     description: "Gathering social insights, orchestrating social handle takeovers, and publishing to accounts.",
@@ -41,7 +41,7 @@ const featuresData = [
   },
   {
     id: 6,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://vnoclogos.s3-us-west-1.amazonaws.com/logo-codeagent.png",
     image: "",
     title: "CodeAgent",
     description: "Proficient in pulling from Git repositories and publishing to five code creation systems.",
@@ -57,7 +57,7 @@ const featuresData = [
   },
   {
     id: 8,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-contentagent-1.png",
     image: "",
     title: "ContentAgent",
     description: "Masters of creating meta, articles, and more.",
@@ -65,7 +65,7 @@ const featuresData = [
   },
   {
     id: 9,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-AdvoAgent1.png",
     image: "",
     title: "AdvoAgent",
     description: "Experts in PPC, securing exact match keywords, and strategic buying.",
@@ -105,7 +105,7 @@ const featuresData = [
   },
   {
     id: 14,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-capitalagent-2.png",
     image: "",
     title: "CapitalAgent",
     description: "Creating wallets, Dex accounts, multi-signatures, and managing eservices payouts.",
@@ -113,7 +113,7 @@ const featuresData = [
   },
   {
     id: 15,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "http://cdn.vnoc.com/logos/logo-SecurityAgent-1.png",
     image: "",
     title: "SecurityAgent",
     description: "Keeping a vigilant eye on anomalies and suspicious activity.",
@@ -201,7 +201,7 @@ const featuresData = [
   },
   {
     id: 26,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-AttackAgent-2.png",
     image: "",
     title: "AttackAgent",
     description: "Specializes in cybersecurity, protecting networks from unauthorized access and cyber threats.",
@@ -209,7 +209,7 @@ const featuresData = [
   },
   {
     id: 27,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-bankagent1.png",
     image: "",
     title: "BankAgent",
     description: "Provides secure and efficient banking services, including transaction processing and fraud detection.",
@@ -217,7 +217,7 @@ const featuresData = [
   },
   {
     id: 28,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-BillAgent-1.png",
     image: "",
     title: "BillAgent",
     description: "Automates and manages billing processes, ensuring accuracy and efficiency in financial transactions.",
@@ -241,7 +241,7 @@ const featuresData = [
   },
   {
     id: 31,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-EquityAgent.png",
     image: "",
     title: "EquityAgent",
     description: "Analyzes and manages equity investments, providing market insights and financial advice to maximize returns.",
@@ -321,7 +321,7 @@ const featuresData = [
   },
   {
     id: 41,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-agentnews-1.png",
     image: "",
     title: "AgentNews",
     description: "Builds news sites using AI agents.",
@@ -361,7 +361,7 @@ const featuresData = [
   },
   {
     id: 46,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-accountbot-1.png",
     image: "",
     title: "AccountBot",
     description: "Streamlines financial management by automating bookkeeping, reporting, and account reconciliation.",
@@ -369,7 +369,7 @@ const featuresData = [
   },
   {
     id: 47,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-BotChallenge-1.png",
     image: "",
     title: "BotChallenge",
     description: "Hosts competitions and challenges for AI and robotics enthusiasts.",
@@ -377,7 +377,7 @@ const featuresData = [
   },
   {
     id: 48,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-businessbot-1.png",
     image: "",
     title: "BusinessBot",
     description: "Automates business processes, enabling companies to operate more efficiently.",
@@ -385,7 +385,7 @@ const featuresData = [
   },
   {
     id: 49,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-campusbot-1.png",
     image: "",
     title: "CampusBot",
     description: "Offers AI-driven tools for student engagement, campus management, and academic support.",
@@ -393,7 +393,7 @@ const featuresData = [
   },
   {
     id: 50,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-carbonagent-1.png",
     image: "",
     title: "CarbonAgents",
     description: "Supports sustainability efforts by providing tools and resources for carbon footprint management.",
@@ -409,7 +409,7 @@ const featuresData = [
   },
   {
     id: 52,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-CasinoBot-1.png",
     image: "",
     title: "CasinoBot",
     description: "Provides AI-powered solutions for the gaming and casino industry.",
@@ -945,7 +945,7 @@ const featuresData = [
   },
   {
     id: 119,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-Vbot-1.png",
     image: "",
     title: "VBot",
     description: "Offers versatile AI-powered virtual assistants.",
