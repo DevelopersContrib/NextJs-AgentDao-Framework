@@ -417,7 +417,7 @@ const featuresData = [
   },
   {
     id: 53,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-challengeagent-1.png",
     image: "",
     title: "ChallengeAgent",
     description: "Facilitates innovation by connecting organizations with problem solvers.",
@@ -465,7 +465,7 @@ const featuresData = [
   },
   {
     id: 59,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "http://cdn.vnoc.com/logos/logo-DebtAgent-1.png",
     image: "",
     title: "DebtAgent",
     description: "Provides debt management solutions.",
@@ -489,7 +489,7 @@ const featuresData = [
   },
   {
     id: 62,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-EduAgent.png",
     image: "",
     title: "EduAgent",
     description: "Connects students with educational resources and opportunities.",
@@ -553,7 +553,7 @@ const featuresData = [
   },
   {
     id: 70,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "http://cdn.vnoc.com/logos/logo-HomeBot-1a.png",
     image: "",
     title: "IBot",
     description: "Provides AI-powered solutions for personal and business productivity.",
@@ -609,7 +609,7 @@ const featuresData = [
   },
   {
     id: 77,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon.webp",
+    icon: "https://cdn.vnoc.com/logos/logo-marketbot1.png",
     image: "",
     title: "MarketBot",
     description: "Provides AI-driven marketing solutions.",
