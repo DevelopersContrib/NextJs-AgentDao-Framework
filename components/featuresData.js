@@ -649,7 +649,7 @@ const featuresData = [
   },
   {
     id: 82,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://cdn.vnoc.com/logos/logo-OceanBot-1.png",
     image: "",
     title: "OceanBot",
     description: "Offers ocean exploration and conservation tools.",
@@ -689,7 +689,7 @@ const featuresData = [
   },
   {
     id: 87,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://cdn.vnoc.com/logos/logo-PlayAgents1.png",
     image: "",
     title: "PlayAgents",
     description: "Connects gamers with opportunities in the gaming industry.",
@@ -715,9 +715,9 @@ const featuresData = [
     id: 90,
     icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
     image: "",
-    title: "PornAgent",
+    title: "PornAgents",
     description: "Provides a secure and personalized platform for adult content.",
-    link: "https://pornagent.com",
+    link: "https://pornagents.com",
   },
   {
     id: 91,
@@ -739,9 +739,9 @@ const featuresData = [
     id: 93,
     icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
     image: "",
-    title: "ProfileAgent",
+    title: "ProfileAgents",
     description: "Helps individuals and businesses manage their online profiles.",
-    link: "https://profileagent.com",
+    link: "https://profileagents.com",
   },
   {
     id: 94,
@@ -753,7 +753,7 @@ const featuresData = [
   },
   {
     id: 95,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "http://cdn.vnoc.com/logos/logo-PropertyBot-1.png",
     image: "",
     title: "PropertyBot",
     description: "Offers real estate management solutions with AI-driven tools.",
