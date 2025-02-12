@@ -777,7 +777,7 @@ const featuresData = [
   },
   {
     id: 98,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://cdn.vnoc.com/logos/logo-RealtyBot-2.png",
     image: "",
     title: "RealtyBot",
     description: "Automates real estate transactions.",
@@ -785,7 +785,7 @@ const featuresData = [
   },
   {
     id: 99,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://vnoclogos.s3-us-west-1.amazonaws.com/logo-schoolbot.png",
     image: "",
     title: "SchoolBot",
     description: "Offers AI-driven solutions for educational institutions.",
@@ -793,7 +793,7 @@ const featuresData = [
   },
   {
     id: 100,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "http://cdn.vnoc.com/logos/logo-SecurityBot-1.png",
     image: "",
     title: "SecurityBot",
     description: "Specializes in cybersecurity automation.",
@@ -825,7 +825,7 @@ const featuresData = [
   },
   {
     id: 104,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://cdn.vnoc.com/logos/logo-ServiceBot-1.png",
     image: "",
     title: "ServiceBot",
     description: "Automates customer service with AI-powered tools.",
@@ -849,7 +849,7 @@ const featuresData = [
   },
   {
     id: 107,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://cdn.vnoc.com/logos/logo-Sportsbot-2.png",
     image: "",
     title: "SportsBot",
     description: "Provides AI-powered sports analytics.",
@@ -857,7 +857,7 @@ const featuresData = [
   },
   {
     id: 108,
-    icon: "https://cdn.vnoc.com/icons/agentdao-common-icon-1.png",
+    icon: "https://cdn.vnoc.com/logos/logo-Storebot1.png",
     image: "",
     title: "StoreBot",
     description: "Automates e-commerce operations with AI-driven tools.",
