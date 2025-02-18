@@ -1,12 +1,19 @@
-import axios from 'axios'
-import { headers } from 'next/headers'
+import axios from "axios";
+import { headers } from "next/headers";
+
+import { ApiRoutes } from "./models/routes";
+import { getEnvVar, ENV_VAR } from "./getEnvVar";
+
+const apiKey = getEnvVar(ENV_VAR.API_KEY);
+const baseURL = getEnvVar(ENV_VAR.API_URL);
+const domain = getEnvVar(ENV_VAR.NEXT_PUBLIC_VERCEL_URL);
 
 export function getDomain() {
   let DOMAIN = process.env.NEXT_PUBLIC_VERCEL_URL;
-  const headersList = headers()
-  const referrer = headersList.get('host')
-  const domainName = referrer.includes("localhost") ? DOMAIN : referrer
-  return domainName.replace('www.',''); 
+  const headersList = headers();
+  const referrer = headersList.get("host");
+  const domainName = referrer.includes("localhost") ? DOMAIN : referrer;
+  return domainName.replace("www.", "");
 }
 
 export async function getData() {
@@ -31,13 +38,29 @@ export async function getData() {
   }
 }
 
-
 export async function getScript(url) {
-  try{
+  try {
     const res = await axios.get(url);
     return res.data;
-  }catch(e){
-    console.log('error getScript',e)
-    return {error:'error getScript'}
+  } catch (e) {
+    console.log("error getScript", e);
+    return { error: "error getScript" };
   }
 }
+
+export const getLayoutMetadata = async () => {
+  try {
+    const url = `${baseURL}${ApiRoutes.v2DomainConfig}?key=${apiKey}&domain=${domain}`;
+    const response = await axios.get(url);
+    const { data } = response.data;
+    return {
+      title: data.title,
+      description: data.description,
+      keywords: data.keywords,
+      author: data.domainName,
+    };
+  } catch (error) {
+    console.error("Error fetching getLayoutMetadata", error);
+    throw error;
+  }
+};

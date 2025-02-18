@@ -1,30 +1,45 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
+import "./custom.css";
+import { getData, getDomain } from "../lib/data";
+import Script from "next/script";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
-import './custom.css';
-import { getData, getDomain } from '../lib/data';
-import Script from 'next/script';
+import { getLayoutMetadata } from "../lib/data";
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  const c = await getData();
-	return {
-		title: c.data.title ? c.data.title : 'Welcome to '+c.data.domainName,
-		description: c.data.description,
-    keywords: c.data.keywords,
-    author: c.data.author
-	}
+  const response = await getLayoutMetadata();
+  const { title, description, keywords, author } = response;
+  return {
+    title: title ? title : "Welcome to" + title,
+    description,
+    keywords,
+    author,
+  };
 }
 
 export default async function RootLayout({ children }) {
   const domain = getDomain();
-  
+
   const c = await getData();
   return (
     <html lang="en">
       <head>
-         
-        { c.data.adsenseClientId!==''?(<Script id="g-ads" async='' src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${c.data.adsenseClientId}`} crossorigin="anonymous"  data-checked-head="true"></Script>):'' }
-        <Script id="g-manager" async src={`https://www.googletagmanager.com/gtag/js?id=${c.data.accountGA}`}></Script>
+        {c.data.adsenseClientId !== "" ? (
+          <Script
+            id="g-ads"
+            async=""
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${c.data.adsenseClientId}`}
+            crossorigin="anonymous"
+            data-checked-head="true"
+          ></Script>
+        ) : (
+          ""
+        )}
+        <Script
+          id="g-manager"
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${c.data.accountGA}`}
+        ></Script>
         <Script id="g-tag">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -34,7 +49,10 @@ export default async function RootLayout({ children }) {
             gtag('config', '${c.data.accountGA}');
           `}
         </Script>
-        <Script id="g-matomo" type="text/javascript">
+        <Script
+          id="g-matomo"
+          type="text/javascript"
+        >
           {`
             var _paq = window._paq || [];
             _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
@@ -51,15 +69,13 @@ export default async function RootLayout({ children }) {
             })();
           `}
         </Script>
-     {/*
+        {/*
         <noscript>{`<p><img src="${"//stats.numberchallenge.com/matomo.php?idsite="+c.data.piwikId}" alt="" /></p>`}</noscript>
          
         <Script id="test-script" src="https://tools.contrib.com/js/test.js"></Script>
         */}
       </head>
-      <body className="animated-bg tw-text-white">
-        {children}
-      </body>
+      <body className="animated-bg tw-text-white">{children}</body>
     </html>
-  )
+  );
 }
