@@ -1,17 +1,24 @@
 "use client";
 
-import React from 'react';
-import { User, ShoppingCart } from 'lucide-react';
+import React from "react";
+import Image from "next/image";
+import { User, ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import { useThemeStore } from "@/lib/store/useThemeStore";
+import { useFetchTheme } from "@/lib/hooks/useThemeFetcher";
 
 // Helper function to capitalize the first letter and remove the domain extension
 const capitalizeDomain = (domain) => {
-  if (!domain) return '';
-  const domainWithoutExtension = domain.split('.')[0]; // Remove the extension
+  if (!domain) return "";
+  const domainWithoutExtension = domain.split(".")[0]; // Remove the extension
   return domainWithoutExtension.charAt(0).toUpperCase() + domainWithoutExtension.slice(1);
 };
 
 const Header = ({ domain, setShowTopHeader }) => {
+  const { theme } = useThemeStore();
+  useFetchTheme();
+
+  const { logo } = theme;
   const capitalizedDomain = capitalizeDomain(domain);
 
   return (
@@ -58,32 +65,60 @@ const Header = ({ domain, setShowTopHeader }) => {
 
       <nav className="tw-bg-black1 tw-text-white tw-py-4 tw-container tw-mx-auto tw-flex tw-justify-between tw-items-center">
         <div>
-          <Link href={`https://${domain}`} target="_blank" rel="noopener noreferrer">
-            <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
-              {capitalizedDomain}
-            </div>
+          <Link
+            href={`https://${domain}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {logo ? (
+              <Image
+                src={logo}
+                alt="header-logo"
+                width={150}
+                height={50}
+                layout="intrinsic"
+              />
+            ) : (
+              <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
+                {capitalizedDomain}
+              </div>
+            )}
           </Link>
         </div>
 
         <div className="tw-flex tw-items-center tw-space-x-6">
           <ul className="tw-flex tw-space-x-6 tw-text-lg">
             <li>
-              <Link href="/about" className="tw-hover:text-gray-300">
+              <Link
+                href="/about"
+                className="tw-hover:text-gray-300"
+              >
                 About
               </Link>
             </li>
             <li>
-              <a href="https://agentdao.com/tokenomics" target="_blank" className="tw-hover:text-gray-300">
+              <a
+                href="https://agentdao.com/tokenomics"
+                target="_blank"
+                className="tw-hover:text-gray-300"
+              >
                 Tokenomics
               </a>
             </li>
             <li>
-              <a href="https://agentdao.com/agents" target="_blank" className="tw-hover:text-gray-300">
+              <a
+                href="https://agentdao.com/agents"
+                target="_blank"
+                className="tw-hover:text-gray-300"
+              >
                 Agents
               </a>
             </li>
             <li>
-              <Link href="/contact" className="tw-hover:text-gray-300">
+              <Link
+                href="/contact"
+                className="tw-hover:text-gray-300"
+              >
                 Inquire
               </Link>
             </li>

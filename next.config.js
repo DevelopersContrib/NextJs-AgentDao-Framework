@@ -4,29 +4,29 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/',
+        source: "/",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
       {
-        source: '/partner',
+        source: "/partner",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
       {
-        source: '/about',
+        source: "/about",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=3600',
+            key: "Cache-Control",
+            value: "s-maxage=1, stale-while-revalidate=3600",
           },
         ],
       },
@@ -34,16 +34,20 @@ const nextConfig = {
   },
   images: {
     domains: [
-      'cdn.vnoc.com', 
-      'vnoclogos.s3-us-west-1.amazonaws.com', 
-      'tools.contrib.com',
-      'projectcafe.com', 
-      'contrib.com',
-      'vnoclogos.s3-us-west-1.amazonaws.com',
-      'vnoclogos.s3.amazonaws.com',
-      'images.pexels.com'
+      "cdn.vnoc.com",
+      "vnoclogos.s3-us-west-1.amazonaws.com",
+      "tools.contrib.com",
+      "projectcafe.com",
+      "contrib.com",
+      "vnoclogos.s3-us-west-1.amazonaws.com",
+      "vnoclogos.s3.amazonaws.com",
+      "images.pexels.com",
     ],
   },
-}
+  env: {
+    API_URL: process.env.API_URL,
+    API_KEY: process.env.API_KEY,
+  },
+};
 
 module.exports = nextConfig;
