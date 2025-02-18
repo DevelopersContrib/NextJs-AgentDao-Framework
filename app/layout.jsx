@@ -7,7 +7,6 @@ import Script from "next/script";
 import { getLayoutMetadata } from "../lib/data";
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  // const c = await getData();
   const response = await getLayoutMetadata();
   const { title, description, keywords, author } = response;
   return {
