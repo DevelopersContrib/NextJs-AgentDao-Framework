@@ -6,7 +6,7 @@ import { getEnvVar, ENV_VAR } from "./getEnvVar";
 
 const apiKey = getEnvVar(ENV_VAR.API_KEY);
 const baseURL = getEnvVar(ENV_VAR.API_URL);
-const domain = getEnvVar(ENV_VAR.NEXT_PUBLIC_VERCEL_URL);
+const domain = getEnvVar(ENV_VAR.REPLACE_URL);
 
 export function getDomain() {
   let DOMAIN = process.env.NEXT_PUBLIC_VERCEL_URL;
