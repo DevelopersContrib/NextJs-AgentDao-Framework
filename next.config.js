@@ -47,6 +47,7 @@ const nextConfig = {
   env: {
     API_URL: process.env.API_URL,
     API_KEY: process.env.API_KEY,
+    REPLACE_URL: process.env.REPLACE_URL,
   },
 };
 
