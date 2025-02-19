@@ -6,7 +6,6 @@ import { getEnvVar, ENV_VAR } from "./getEnvVar";
 
 const apiKey = getEnvVar(ENV_VAR.API_KEY);
 const baseURL = getEnvVar(ENV_VAR.API_URL);
-const domain = getEnvVar(ENV_VAR.REPLACE_URL);
 
 export function getDomain() {
   let DOMAIN = process.env.NEXT_PUBLIC_VERCEL_URL;
@@ -49,7 +48,12 @@ export async function getScript(url) {
 }
 
 export const getLayoutMetadata = async () => {
+  const host = headers().get("host");
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+  const originUrl = `${protocol}://${host}`;
   try {
+    const getDomain = await axios.get(`${originUrl}/api/domain`);
+    const { domain } = getDomain.data;
     const url = `${baseURL}${ApiRoutes.v2DomainConfig}?key=${apiKey}&domain=${domain}`;
     const response = await axios.get(url);
     const { data } = response.data;
