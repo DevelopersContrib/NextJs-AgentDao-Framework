@@ -1,0 +1,43 @@
+import { NextResponse } from "next/server";
+
+import { ENV_VAR, getEnvVar } from "@/lib/getEnvVar";
+import { fetcher } from "@/lib/hooks/useADAOFetcher";
+
+const baseURL = getEnvVar(ENV_VAR.API_URL_ADAO);
+
+async function handleRequest(req, method) {
+  try {
+    const { url, payload, config } =
+      method === "GET"
+        ? {
+            url: new URL(req.url, "http://localhost:3000").searchParams.get("url"), // Add base URL here
+            config: new URL(req.url, "http://localhost:3000").searchParams.get("config"),
+          }
+        : await req.json();
+
+    if (!url) {
+      return NextResponse.json({ error: 'Missing "url" parameter' }, { status: 400 });
+    }
+
+    const data = await fetcher(
+      baseURL + url,
+      method === "GET" ? undefined : payload,
+      method === "GET" && config ? JSON.parse(config) : { ...config, method }
+    );
+
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error(`Error in ${method} fetcher:`, error);
+
+    if (error instanceof Error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ error: "An unexpected error occurred" }, { status: 500 });
+  }
+}
+
+export const GET = (req) => handleRequest(req, "GET");
+export const POST = (req) => handleRequest(req, "POST");
+export const PUT = (req) => handleRequest(req, "PUT");
+export const DELETE = (req) => handleRequest(req, "DELETE");

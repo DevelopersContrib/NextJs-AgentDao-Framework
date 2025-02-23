@@ -115,6 +115,14 @@ const Header = ({ domain, setShowTopHeader }) => {
               </a>
             </li>
             <li>
+              <a
+                href="/referral"
+                className="tw-hover:text-gray-300"
+              >
+                Referral
+              </a>
+            </li>
+            <li>
               <Link
                 href="/contact"
                 className="tw-hover:text-gray-300"
