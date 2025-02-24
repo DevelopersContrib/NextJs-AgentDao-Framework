@@ -1,10 +1,11 @@
-import Layout from "@/components/layout/layout";
+import Layout from "@/components/Layout";
 import ReferralPage from "@/modules/referral";
-
-export default function Referral() {
+const Referral = () => {
   return (
     <Layout>
       <ReferralPage />
     </Layout>
   );
-}
+};
+
+export default Referral;
