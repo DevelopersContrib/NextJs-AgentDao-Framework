@@ -8,7 +8,12 @@ export default async function Layout({ children, disableFooter = false }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header domain={domain} />
-      <main className="flex-1 flex justify-center items-center">{children}</main>
+      <main
+        className="flex-1 flex justify-center items-center"
+        style={{ minHeight: "530px" }}
+      >
+        {children}
+      </main>
       {!disableFooter && <Footer domain={domain} />}
     </div>
   );

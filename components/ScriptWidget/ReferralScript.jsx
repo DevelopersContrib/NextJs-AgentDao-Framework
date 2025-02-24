@@ -1,12 +1,7 @@
 "use client";
-
-import { useFetchReferral } from "@/lib/hooks/useReferralFetcher";
-import { useReferralStore } from "@/lib/store/useReferralStore";
 import { useEffect, useState, useCallback } from "react";
 
-const ReferralWidget = () => {
-  const { campaignId } = useReferralStore();
-  useFetchReferral();
+const ReferralWidget = ({ campaignId }) => {
   const loadScript = useCallback((id) => {
     if (!document.getElementById("referral-script") && id) {
       const script = document.createElement("script");

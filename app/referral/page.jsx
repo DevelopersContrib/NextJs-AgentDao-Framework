@@ -1,10 +1,10 @@
 import Layout from "@/components/layout/layout";
-import ReferralScript from "@/components/ScriptWidget/ReferralScript";
+import ReferralPage from "@/modules/referral";
 
 export default function Referral() {
   return (
     <Layout>
-      <ReferralScript />
+      <ReferralPage />
     </Layout>
   );
 }

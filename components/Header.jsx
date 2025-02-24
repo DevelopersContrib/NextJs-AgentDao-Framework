@@ -86,8 +86,8 @@ const Header = ({ domain, setShowTopHeader }) => {
           </Link>
         </div>
 
-        <div className="tw-flex tw-items-center tw-space-x-6">
-          <ul className="tw-flex tw-space-x-6 tw-text-lg">
+        <div className="tw-flex tw-items-center tw-justify-center tw-space-x-6 tw-h-full">
+          <ul className="tw-flex tw-items-center tw-space-x-6 tw-text-lg tw-mb-0">
             <li>
               <Link
                 href="/about"
@@ -136,7 +136,7 @@ const Header = ({ domain, setShowTopHeader }) => {
             href="https://adao.ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="tw-bg-gradient-to-r tw-from-blue-500 tw-to-purple-600 tw-text-white tw-font-semibold tw-py-2 tw-px-5 tw-rounded-full tw-shadow-md hover:tw-opacity-80 focus:tw-outline-none"
+            className="tw-bg-gradient-to-r tw-from-blue-500 tw-to-purple-600 tw-text-white tw-font-semibold tw-py-2 tw-px-5 tw-rounded-full tw-shadow-md hover:tw-opacity-80 focus:tw-outline-none tw-flex tw-items-center"
           >
             Buy Adao Token
           </a>
