@@ -10,13 +10,19 @@ a {
 }
 
 @keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animated-bg {
-  background: linear-gradient(-45deg, #05060A, #040509, #030407, #000000);
+  background: linear-gradient(-45deg, #05060a, #040509, #030407, #000000);
   background-size: 400% 400%;
   animation: gradientAnimation 20s ease infinite;
 }
@@ -53,7 +59,7 @@ a {
 .tw-text-xxxl {
   font-size: 5rem;
   line-height: 1;
-  color: #0F3650;
+  color: #0f3650;
 }
 
 @media (max-width: 768px) {
@@ -86,7 +92,7 @@ a {
 }
 
 .card-shadow {
-  box-shadow:rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;  
+  box-shadow: rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;
 }
 
 .column-border {
@@ -124,11 +130,10 @@ a {
 
 .section-card-border {
   padding: 32px;
-  box-shadow:rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;
+  box-shadow: rgba(8, 14, 40, 0.1) 0px 6px 40px 0px;
   border-radius: 6px;
 }
 
 .feature-title a {
   text-decoration: none;
 }
-
