@@ -17,6 +17,7 @@ import Features from "@/components/Features";
 import Revenue from "@/components/Revenue";
 import Cta from "@/components/Cta";
 import FomoPopup from "@/components/TokenSalePopup";
+import AgentSection from "@/components/AgentSection";
 
 export default async function Home() {
   const c = await getData();
@@ -37,6 +38,7 @@ export default async function Home() {
       <Hero />
       <Features />
       <Revenue />
+      <AgentSection />
       <SectionThree />
       <Cta />
       <FomoPopup />
