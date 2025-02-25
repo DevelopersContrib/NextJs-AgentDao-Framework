@@ -4,19 +4,19 @@ import Link from "next/link";
 
 const featureAgents = [
   {
-    tld: "vbot.ai",
+    tld: "vbot.com",
     logo: "https://cdn.vnoc.com/logos/logo-Vbot-1.png",
     price: "$49000",
     description: "Vbot is an advanced AI assistant for automating workflows and communication.",
   },
   {
-    tld: "contentagent.io",
+    tld: "contentagent.com",
     logo: "https://cdn.vnoc.com/logos/logo-contentagent-1.png",
     price: "$29000",
     description: "ContentAgent helps you create, optimize, and distribute high-quality content.",
   },
   {
-    tld: "socialagent.ai",
+    tld: "socialagent.com",
     logo: "https://cdn.vnoc.com/logos/logo-socialagent1.png",
     price: "$39000",
     description: "SocialAgent manages and automates your social media engagement and growth.",
