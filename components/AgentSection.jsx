@@ -31,7 +31,7 @@ const featureAgents = [
 
 const AgentSection = () => {
   return (
-    <section className="tw-py-16 tw-bg-gray-900 tw-text-white">
+    <section className="tw-py-24 tw-bg-gray-900 tw-text-white">
       <div className="tw-container tw-mx-auto tw-w-4/5 tw-text-center">
         <div className="tw-text-center tw-mb-12">
         <h2 className="tw-text-4xl tw-font-extrabold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">Featured Agents</h2>
@@ -44,7 +44,7 @@ const AgentSection = () => {
           {featureAgents.map((agent, index) => (
             <div
               key={index}
-              className="tw-relative tw-bg-gray-800 tw-text-white tw-p-6 tw-rounded-lg tw-shadow-lg tw-flex tw-flex-col tw-border tw-border-gray-700"
+              className="tw-relative tw-bg-[#111827] tw-text-white tw-p-6 tw-rounded-lg tw-shadow-lg tw-flex tw-flex-col tw-border tw-border-gray-700"
             >
               <div
                 className="tw-absolute tw-top-0 tw-bg-red-500 tw-text-white tw-text-xs tw-font-bold tw-px-3 tw-py-1 
