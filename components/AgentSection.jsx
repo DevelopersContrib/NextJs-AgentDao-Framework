@@ -47,10 +47,10 @@ const AgentSection = () => {
               className="tw-relative tw-bg-[#111827] tw-text-white tw-p-6 tw-rounded-lg tw-shadow-lg tw-flex tw-flex-col tw-border tw-border-gray-700"
             >
               <div
-                className="tw-absolute tw-top-0 tw-bg-red-500 tw-text-white tw-text-xs tw-font-bold tw-px-3 tw-py-1 
+                className="tw-absolute tw-top-0 tw-bg-blue-500 tw-text-white tw-text-xs tw-font-bold tw-px-3 tw-py-1 
                 tw-shadow-lg tw-rounded-bl-lg
                 before:tw-absolute before:tw-content-[''] before:tw-right-0 before:tw-top-full before:tw-border-t-8 
-                before:tw-border-r-8 before:tw-border-transparent before:tw-border-t-red-700"
+                before:tw-border-r-8 before:tw-border-transparent before:tw-border-t-blue-700"
                 style={{ right: "-8px" }}
               >
                 Live on Base
