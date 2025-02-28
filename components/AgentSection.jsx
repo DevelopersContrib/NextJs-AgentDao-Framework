@@ -1,35 +1,21 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const featureAgents = [
-  {
-    tld: "vbot.com",
-    logo: "https://cdn.vnoc.com/logos/logo-Vbot-1.png",
-    price: "$49000",
-    description: "Vbot is an advanced AI assistant for automating workflows and communication.",
-  },
-  {
-    tld: "contentagent.com",
-    logo: "https://cdn.vnoc.com/logos/logo-contentagent-1.png",
-    price: "$29000",
-    description: "ContentAgent helps you create, optimize, and distribute high-quality content.",
-  },
-  {
-    tld: "socialagent.com",
-    logo: "https://cdn.vnoc.com/logos/logo-socialagent1.png",
-    price: "$39000",
-    description: "SocialAgent manages and automates your social media engagement and growth.",
-  },
-  {
-    tld: "growagent.com",
-    logo: "https://vnoclogos.s3-us-west-1.amazonaws.com/logo-growagent.png",
-    price: "$59000",
-    description: "An AI-powered trading bot that maximizes investment opportunities.",
-  },
-];
+import { useFetchAgent } from "@/lib/hooks/userAgentFetcher";
+import { useAgentStore } from "@/lib/store/useAgentStore";
+
+
 
 const AgentSection = () => {
+
+  const { agents } = useAgentStore();
+  useFetchAgent();
+
+
+
+
   return (
     <section className="tw-py-24 tw-bg-gray-900 tw-text-white">
       <div className="tw-container tw-mx-auto tw-w-4/5 tw-text-center">
@@ -41,7 +27,7 @@ const AgentSection = () => {
         </div>
 
         <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-6">
-          {featureAgents.map((agent, index) => (
+          {Array.isArray(agents) && agents.map((agent, index) => (
             <div
               key={index}
               className="tw-relative tw-bg-[#111827] tw-text-white tw-p-6 tw-rounded-lg tw-shadow-lg tw-flex tw-flex-col tw-border tw-border-gray-700"
@@ -69,7 +55,7 @@ const AgentSection = () => {
                   </Link>
                 </div>
 
-                <p className="tw-font-semibold tw-text-gray-300 tw-mb-2">TV: {agent.price}</p>
+                <p className="tw-font-semibold tw-text-gray-300 tw-mb-2">TV: ${agent.price.toLocaleString('en-US')}</p>
                 {agent.description && (
                   <div className="tw-mb-4">
                     <small className="tw-text-gray-400">{agent.description}</small>
