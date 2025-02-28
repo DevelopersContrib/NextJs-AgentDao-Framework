@@ -80,7 +80,6 @@ const AgentSection = () => {
                   )}
                 </div>
 
-                {/* ✅ NEW "Buy Token" LINK ONLY ✅ */}
                 <Link 
                   href={`https://app.agentdao.com/bsc/dna/details/${agent.tld}`}
                   target="_blank"
