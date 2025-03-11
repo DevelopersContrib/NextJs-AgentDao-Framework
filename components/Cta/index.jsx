@@ -11,8 +11,9 @@ const Cta = () => {
           Don&apos;t miss out on the next generation of digital assets. Join AgentDAO today.
         </p>
         <a
-          href="#getstarted"
+          href="https://agentdao.com/"
           className="tw-inline-block tw-bg-gradient-to-r tw-from-pink-500 tw-via-red-500 tw-to-yellow-500 tw-text-white tw-font-semibold tw-py-4 tw-px-8 tw-rounded-full tw-shadow-lg hover:tw-scale-105 hover:tw-shadow-xl transition-transform duration-300 animate-pulse"
+          target="_blank"
         >
           Get Started Now
         </a>
