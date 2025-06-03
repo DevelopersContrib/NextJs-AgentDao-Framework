@@ -9,13 +9,41 @@ import { getLayoutMetadata } from "../lib/data";
 export async function generateMetadata({ params, searchParams }, parent) {
   const response = await getLayoutMetadata();
   const { title, description, keywords, author } = response;
+
+  const siteTitle = title?.trim() || "Welcome to CONTRIB Network";
+  const siteDesc =
+    description?.trim() ||
+    "Explore the CONTRIB Network: a hub for digital opportunities, token economies, and collaborative ventures.";
+  const siteKeywords = keywords?.trim()
+    ? keywords.split(",")
+    : ["contrib", "token", "decentralized", "collaboration"];
+  const siteAuthor = author || "contrib";
+
+  const domain = process.env.NEXT_PUBLIC_VERCEL_URL || "yourdomain.com";
+
   return {
-    title: title ? title : "Welcome to" + title,
-    description,
-    keywords,
-    author,
+    title: siteTitle,
+    description: siteDesc,
+    keywords: siteKeywords,
+    authors: [{ name: siteAuthor }],
+    openGraph: {
+      title: siteTitle,
+      description: siteDesc,
+      siteName: domain,
+      type: "website",
+      locale: "en_US",
+      url: `https://${domain}`,
+      images: [`https://${domain}/images/og-image.jpg`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteTitle,
+      description: siteDesc,
+      images: [`https://${domain}/images/twitter-image.jpg`],
+    },
   };
 }
+
 
 export default async function RootLayout({ children }) {
   const domain = getDomain();
