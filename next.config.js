@@ -33,16 +33,43 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: [
-      "cdn.vnoc.com",
-      "vnoclogos.s3-us-west-1.amazonaws.com",
-      "vnocassets.s3.us-east-1.amazonaws.com",
-      "tools.contrib.com",
-      "projectcafe.com",
-      "contrib.com",
-      "vnoclogos.s3-us-west-1.amazonaws.com",
-      "vnoclogos.s3.amazonaws.com",
-      "images.pexels.com",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.vnoc.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vnoclogos.s3-us-west-1.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vnocassets.s3.us-east-1.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tools.contrib.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'projectcafe.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'contrib.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vnoclogos.s3.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.dicebear.com',
+      },
     ],
   },
   env: {

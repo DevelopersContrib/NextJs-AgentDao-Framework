@@ -1,11 +1,13 @@
 # NextJS AgentDao Framework - Project Index
 
 ## Overview
+
 This is a Next.js 14.2.2 template framework designed for VNOC and AgentDAO domains. It provides a complete web application structure with dynamic theming, API integration, and multi-domain support.
 
 ## Project Structure
 
 ### Core Configuration
+
 - **Framework**: Next.js 14.2.2 with App Router
 - **Styling**: Tailwind CSS with custom prefix `tw-`
 - **State Management**: Zustand
@@ -14,6 +16,7 @@ This is a Next.js 14.2.2 template framework designed for VNOC and AgentDAO domai
 - **Animations**: Framer Motion + React TSParticles
 
 ### Key Dependencies
+
 ```json
 {
   "next": "14.2.2",
@@ -30,6 +33,7 @@ This is a Next.js 14.2.2 template framework designed for VNOC and AgentDAO domai
 ## Directory Structure
 
 ### `/app` - Next.js App Router
+
 ```
 app/
 ├── layout.jsx              # Root layout with metadata generation
@@ -59,6 +63,7 @@ app/
 ```
 
 ### `/components` - React Components
+
 ```
 components/
 ├── Header.jsx              # Main navigation header
@@ -91,6 +96,7 @@ components/
 ```
 
 ### `/lib` - Utility Libraries
+
 ```
 lib/
 ├── data.jsx                # Data fetching utilities
@@ -111,36 +117,42 @@ lib/
 ## Key Features
 
 ### 1. Multi-Domain Support
+
 - Dynamic domain detection via middleware
 - Domain-specific theming and configuration
 - Automatic www redirect (production only)
 - Domain-based API calls
 
 ### 2. Dynamic Theming System
+
 - Server-side theme fetching from API
 - Client-side theme state management
 - Dynamic logo and branding
 - Customizable color schemes
 
 ### 3. API Integration
+
 - **CONTRIB API**: Domain configuration and data
 - **ADAO API**: Agent and token data
 - **Lead Management**: Email capture and processing
 - **Purchase Flow**: Domain and token purchasing
 
 ### 4. AgentDAO Integration
+
 - Featured agents display
 - Token value calculations
 - Purchase flow integration
 - Real-time agent data
 
 ### 5. Analytics & Tracking
+
 - Google Analytics integration
 - Google AdSense support
 - Matomo analytics
 - Custom event tracking
 
 ### 6. SEO & Metadata
+
 - Dynamic meta tags per domain
 - Open Graph support
 - Twitter Card integration
@@ -150,26 +162,31 @@ lib/
 ## API Routes
 
 ### `/api/domain`
+
 - **Method**: GET
 - **Purpose**: Returns current domain
 - **Response**: `{ domain: string }`
 
 ### `/api/adao-fetcher`
+
 - **Methods**: GET, POST, PUT, DELETE
 - **Purpose**: Proxy for ADAO API calls
 - **Features**: Error handling, timeout management
 
 ### `/api/leads`
+
 - **Method**: POST
 - **Purpose**: Capture email leads
 - **Integration**: CONTRIB forms API
 
 ### `/api/buy`
+
 - **Method**: POST
 - **Purpose**: Process domain/token purchases
 - **Features**: User validation, email notifications
 
 ### `/api/partner`
+
 - **Method**: POST
 - **Purpose**: Handle partnership applications
 - **Features**: Multi-step form processing
@@ -177,6 +194,7 @@ lib/
 ## Environment Variables
 
 ### Required Variables
+
 ```env
 API_KEY=your_api_key
 API_URL=your_api_url
@@ -189,12 +207,14 @@ CONTRIB_API1=your_contrib_api_url
 ## Styling System
 
 ### Tailwind Configuration
+
 - Custom prefix: `tw-`
 - Content paths: `./pages/**/*`, `./components/**/*`, `./app/**/*`
 - Custom color schemes
 - Responsive design utilities
 
 ### CSS Architecture
+
 - `globals.css`: Global styles and Tailwind imports
 - `custom.css`: Custom component styles
 - Bootstrap integration for additional components
@@ -202,11 +222,13 @@ CONTRIB_API1=your_contrib_api_url
 ## State Management
 
 ### Zustand Stores
+
 1. **useThemeStore**: Theme and branding data
 2. **useAgentStore**: Agent listings and data
 3. **useReferralStore**: Referral system state
 
 ### Custom Hooks
+
 1. **useFetchTheme**: Server-side theme fetching
 2. **useADAOFetcher**: ADAO API integration
 3. **useFetchAgent**: Agent data management
@@ -215,17 +237,20 @@ CONTRIB_API1=your_contrib_api_url
 ## Deployment Considerations
 
 ### Next.js Configuration
+
 - React Strict Mode enabled
 - Custom headers for caching
 - Image domain whitelist
 - Environment variable exposure
 
 ### Middleware
+
 - Automatic www redirect (production)
 - Domain-based routing
 - Request processing
 
 ### Performance
+
 - Static generation where possible
 - Image optimization
 - Caching strategies
@@ -234,6 +259,7 @@ CONTRIB_API1=your_contrib_api_url
 ## Development Workflow
 
 ### Scripts
+
 ```bash
 npm run dev      # Development server
 npm run build    # Production build
@@ -242,6 +268,7 @@ npm run lint     # ESLint checking
 ```
 
 ### Key Development Files
+
 - `next.config.js`: Next.js configuration
 - `tailwind.config.js`: Tailwind CSS configuration
 - `middleware.ts`: Request middleware
@@ -250,6 +277,7 @@ npm run lint     # ESLint checking
 ## Integration Points
 
 ### External Services
+
 1. **CONTRIB Network**: Lead management and forms
 2. **AgentDAO**: Agent marketplace and tokens
 3. **VNOC**: Domain management and branding
@@ -257,6 +285,7 @@ npm run lint     # ESLint checking
 5. **Matomo**: Alternative analytics
 
 ### Third-Party APIs
+
 - Domain configuration API
 - Agent marketplace API
 - Lead capture API
@@ -274,12 +303,14 @@ npm run lint     # ESLint checking
 ## Customization Points
 
 ### Domain-Specific Customization
+
 - Logo and branding via API
 - Color schemes and themes
 - Content and messaging
 - Feature toggles
 
 ### Component Customization
+
 - Modular component structure
 - Props-based configuration
 - Theme-aware styling
