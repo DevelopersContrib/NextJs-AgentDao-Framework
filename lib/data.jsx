@@ -19,13 +19,8 @@ export async function getData() {
   try {
     const domain = getDomain();
     
-    // Check if API URL is defined
-    const apiUrl = process.env.NEXT_PUBLIC_CONTRIB_API1;
-    if (!apiUrl) {
-      console.error("NEXT_PUBLIC_CONTRIB_API1 environment variable is not set");
-      return { data: {} };
-    }
-    
+    // Use the correct API endpoint
+    const apiUrl = process.env.NEXT_PUBLIC_CONTRIB_API1 || "https://api1.contrib.co/v2/domains/getdomainconfig?key=5c1bde69a9e783c7edc2e603d8b25023";
     const url = apiUrl + `&domain=${domain}`;
 
     console.log("Fetching data from:", url);
