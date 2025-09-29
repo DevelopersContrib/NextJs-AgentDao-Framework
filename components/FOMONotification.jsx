@@ -13,6 +13,16 @@ export default function FOMONotification() {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const hideNotification = useCallback(() => {
+    setIsAnimating(false);
+    
+    // Wait for animation to complete
+    setTimeout(() => {
+      setIsVisible(false);
+      setNotification(null);
+    }, 500); // 0.5 second fade out
+  }, []);
+
   const showNotification = useCallback(() => {
     if (!notification) return;
 
@@ -23,7 +33,7 @@ export default function FOMONotification() {
     setTimeout(() => {
       hideNotification();
     }, 30000); // 30 seconds display time
-  }, [notification]);
+  }, [notification, hideNotification]);
 
   useEffect(() => {
     // Listen for FOMO notifications
@@ -45,17 +55,6 @@ export default function FOMONotification() {
       fomoCache.stop();
     };
   }, [showNotification]);
-
-
-  const hideNotification = () => {
-    setIsAnimating(false);
-    
-    // Wait for animation to complete
-    setTimeout(() => {
-      setIsVisible(false);
-      setNotification(null);
-    }, 500); // 0.5 second fade out
-  };
 
   const handleClick = () => {
     // Track click for analytics

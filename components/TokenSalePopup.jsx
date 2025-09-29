@@ -10,6 +10,16 @@ const TokenSalePopup = () => {
   const [notification, setNotification] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const hideNotification = useCallback(() => {
+    setIsAnimating(false);
+    
+    // Wait for animation to complete
+    setTimeout(() => {
+      setShowPopup(false);
+      setNotification(null);
+    }, 500); // 0.5 second fade out
+  }, []);
+
   const showNotification = useCallback(() => {
     if (!notification) return;
 
@@ -21,16 +31,6 @@ const TokenSalePopup = () => {
       hideNotification();
     }, 30000); // 30 seconds display time
   }, [notification, hideNotification]);
-
-  const hideNotification = useCallback(() => {
-    setIsAnimating(false);
-    
-    // Wait for animation to complete
-    setTimeout(() => {
-      setShowPopup(false);
-      setNotification(null);
-    }, 500); // 0.5 second fade out
-  }, []);
 
   useEffect(() => {
     // Listen for FOMO notifications from cache system
