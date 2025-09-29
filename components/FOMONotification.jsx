@@ -1,39 +1,32 @@
-// components/TokenSalePopup.jsx - Enhanced FOMO Notification with Cache System
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { fomoCache } from '../lib/fomo-cache';
 
-const TokenSalePopup = () => {
-  const [showPopup, setShowPopup] = useState(false);
+// Default avatar for FOMO notifications
+const defaultAvatar = '/api/placeholder/50/50';
+
+export default function FOMONotification() {
   const [notification, setNotification] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const showNotification = useCallback(() => {
     if (!notification) return;
 
-    setShowPopup(true);
+    setIsVisible(true);
     setIsAnimating(true);
 
     // Hide after 30 seconds (as requested)
     setTimeout(() => {
       hideNotification();
     }, 30000); // 30 seconds display time
-  }, [notification, hideNotification]);
-
-  const hideNotification = useCallback(() => {
-    setIsAnimating(false);
-    
-    // Wait for animation to complete
-    setTimeout(() => {
-      setShowPopup(false);
-      setNotification(null);
-    }, 500); // 0.5 second fade out
-  }, []);
+  }, [notification]);
 
   useEffect(() => {
-    // Listen for FOMO notifications from cache system
+    // Listen for FOMO notifications
     const handleFOMONotification = (event) => {
       const notificationData = event.detail;
       setNotification(notificationData);
@@ -43,7 +36,7 @@ const TokenSalePopup = () => {
     // Listen for custom FOMO events
     window.addEventListener('fomo-notification', handleFOMONotification);
 
-    // Start the FOMO system (5-minute intervals)
+    // Start the FOMO system
     fomoCache.start();
 
     // Cleanup
@@ -52,6 +45,17 @@ const TokenSalePopup = () => {
       fomoCache.stop();
     };
   }, [showNotification]);
+
+
+  const hideNotification = () => {
+    setIsAnimating(false);
+    
+    // Wait for animation to complete
+    setTimeout(() => {
+      setIsVisible(false);
+      setNotification(null);
+    }, 500); // 0.5 second fade out
+  };
 
   const handleClick = () => {
     // Track click for analytics
@@ -63,12 +67,7 @@ const TokenSalePopup = () => {
     }
   };
 
-  // Generate avatar URL based on name
-  const getAvatarUrl = (name) => {
-    return `https://api.dicebear.com/9.x/pixel-art/svg?seed=${name}`;
-  };
-
-  if (!showPopup || !notification) {
+  if (!isVisible || !notification) {
     return null;
   }
 
@@ -88,7 +87,7 @@ const TokenSalePopup = () => {
       {/* Avatar */}
       <div className="tw-mr-3 tw-flex-shrink-0">
         <Image 
-          src={getAvatarUrl(notification.name)} 
+          src={defaultAvatar} 
           alt={`${notification.name} avatar`} 
           width={50} 
           height={50} 
@@ -126,6 +125,34 @@ const TokenSalePopup = () => {
       </button>
     </div>
   );
-};
+}
 
-export default TokenSalePopup;
+// Hook for manually triggering FOMO notifications (useful for testing)
+export const useFOMONotification = () => {
+  const triggerNotification = (name, amount) => {
+    const notification = {
+      id: `manual_${Date.now()}`,
+      name: name || fomoCache.getRandomName(),
+      amount: amount || fomoCache.getRandomAmount(),
+      isFake: true
+    };
+    
+    window.dispatchEvent(new CustomEvent('fomo-notification', {
+      detail: notification
+    }));
+  };
+
+  const addPurchase = (amount) => {
+    fomoCache.addPurchase(amount);
+  };
+
+  const getStats = () => {
+    return fomoCache.getStats();
+  };
+
+  return {
+    triggerNotification,
+    addPurchase,
+    getStats
+  };
+};

@@ -3,6 +3,7 @@ import "./globals.css";
 import "./custom.css";
 import { getData, getDomain } from "../lib/data";
 import Script from "next/script";
+import FOMONotification from "../components/FOMONotification";
 
 import { getLayoutMetadata } from "../lib/data";
 

@@ -18,7 +18,15 @@ export function getDomain() {
 export async function getData() {
   try {
     const domain = getDomain();
-    const url = process.env.NEXT_PUBLIC_CONTRIB_API1 + `&domain=${domain}`;
+    
+    // Check if API URL is defined
+    const apiUrl = process.env.NEXT_PUBLIC_CONTRIB_API1;
+    if (!apiUrl) {
+      console.error("NEXT_PUBLIC_CONTRIB_API1 environment variable is not set");
+      return { data: {} };
+    }
+    
+    const url = apiUrl + `&domain=${domain}`;
 
     console.log("Fetching data from:", url);
 
