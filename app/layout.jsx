@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import "./custom.css";
 import { getData, getDomain } from "../lib/data";

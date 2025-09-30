@@ -18,6 +18,14 @@ const Header = ({ domain, setShowTopHeader }) => {
   const { theme, setTheme } = useThemeStore();
   const [isLoading, setIsLoading] = useState(true);
   
+  // Ensure we always have a fallback theme
+  const safeTheme = theme || { logo: null };
+  const { logo } = safeTheme;
+  
+  // Server-side fallback - always show text logo during SSR
+  const isServer = typeof window === 'undefined';
+  const shouldShowTextLogo = isServer || !logo || logo === "https://cdn.vnoc.com/images/logo/logo-AgentDao-onblack.svg";
+  
   // Load theme with aggressive caching for thousands of domains
   useEffect(() => {
     const loadTheme = async () => {
@@ -64,7 +72,6 @@ const Header = ({ domain, setShowTopHeader }) => {
     loadTheme();
   }, [domain, setTheme]);
 
-  const { logo } = theme || {};
   const capitalizedDomain = capitalizeDomain(domain);
 
   return (
@@ -116,11 +123,7 @@ const Header = ({ domain, setShowTopHeader }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {isLoading ? (
-              <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text tw-animate-pulse">
-                {capitalizedDomain}
-              </div>
-            ) : logo ? (
+            {!shouldShowTextLogo && logo ? (
               <Image
                 src={logo}
                 alt={`${capitalizedDomain} logo`}
@@ -130,13 +133,22 @@ const Header = ({ domain, setShowTopHeader }) => {
                 onError={(e) => {
                   console.error('Logo failed to load:', logo);
                   e.target.style.display = 'none';
+                  // Show text logo as fallback when image fails
+                  const textLogo = e.target.nextElementSibling;
+                  if (textLogo) {
+                    textLogo.style.display = 'block';
+                  }
                 }}
               />
-            ) : (
-              <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
-                {capitalizedDomain}
-              </div>
-            )}
+            ) : null}
+            
+            {/* Text logo - always present, shown when no valid logo */}
+            <div 
+              className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text"
+              style={{ display: shouldShowTextLogo ? 'block' : 'none' }}
+            >
+              {capitalizedDomain}
+            </div>
           </Link>
         </div>
 
