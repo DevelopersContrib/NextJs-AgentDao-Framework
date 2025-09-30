@@ -40,12 +40,11 @@ const SectionThree = () => {
     <section className="tw-py-16 tw-bg-gray-900 tw-text-white">
       <div className="tw-container tw-mx-auto tw-w-4/5 tw-text-center">
         <h2 className="tw-text-4xl tw-font-extrabold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
-          Explore the Expanding AgentDAO Network
+          AgentDAO Ecosystem Features
         </h2>
         <p className="tw-text-lg tw-text-gray-400 tw-mb-12 tw-max-w-3xl tw-mx-auto">
-          Our network is ever-expanding, with new URL assets continuously onboarding into AgentDAO.
-          Each agent starts with a base URL, serving as the root for its operations, all culminating with a .com.
-          Here&apos;s a glimpse of our growing family:
+          Discover the powerful features and capabilities that make AgentDAO the leading platform for autonomous agents.
+          From advanced AI tools to comprehensive management systems, explore what makes our ecosystem unique.
         </p>
 
         {loading ? (

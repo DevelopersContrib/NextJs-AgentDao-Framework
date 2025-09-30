@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+
+export const dynamic = 'force-dynamic';
 import Navigation from "../components/Navigation";
 import SectionTwo from "../components/SectionTwo";
 import SectionThree from "../components/SectionThree";
@@ -18,6 +20,7 @@ import Revenue from "@/components/Revenue";
 import Cta from "@/components/Cta";
 import FomoPopup from "@/components/TokenSalePopup";
 import AgentSection from "@/components/AgentSection";
+import StaticEcosystemFeatures from "@/components/StaticEcosystemFeatures";
 
 export default async function Home() {
   const c = await getData();
@@ -39,7 +42,7 @@ export default async function Home() {
       <Features />
       <Revenue />
       <AgentSection />
-      <SectionThree />
+      <StaticEcosystemFeatures />
       <Cta />
       <FomoPopup />
       <Footer domain={domain} />

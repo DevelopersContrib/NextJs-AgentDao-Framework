@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Cost optimization: Reduce function invocations
+  experimental: {
+    serverComponentsExternalPackages: ['axios'],
+  },
+  // Aggressive caching to reduce edge requests
   async headers() {
     return [
       {
@@ -8,7 +13,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "s-maxage=1, stale-while-revalidate=3600",
+            value: "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400",
           },
         ],
       },
@@ -17,7 +22,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "s-maxage=1, stale-while-revalidate=3600",
+            value: "public, max-age=1800, s-maxage=3600, stale-while-revalidate=3600",
           },
         ],
       },
@@ -26,7 +31,17 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "s-maxage=1, stale-while-revalidate=3600",
+            value: "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      // Cache API responses aggressively
+      {
+        source: "/api/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=1800, s-maxage=3600, stale-while-revalidate=3600",
           },
         ],
       },

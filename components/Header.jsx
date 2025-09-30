@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { User, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useThemeStore } from "@/lib/store/useThemeStore";
-import { useFetchTheme } from "@/lib/hooks/useThemeFetcher";
+import { fetchDomainDataWithCache, getCachedLogo } from "@/lib/domain-cache";
 
 // Helper function to capitalize the first letter and remove the domain extension
 const capitalizeDomain = (domain) => {
@@ -15,10 +15,40 @@ const capitalizeDomain = (domain) => {
 };
 
 const Header = ({ domain, setShowTopHeader }) => {
-  const { theme } = useThemeStore();
-  useFetchTheme();
+  const { theme, setTheme } = useThemeStore();
+  const [isLoading, setIsLoading] = useState(true);
+  
+  // Load theme with aggressive caching for thousands of domains
+  useEffect(() => {
+    const loadTheme = async () => {
+      try {
+        // Get cached logo immediately for instant display
+        const cachedLogo = getCachedLogo(domain);
+        setTheme({
+          logo: cachedLogo,
+          primaryColor: "#000000",
+          secondaryColor: "#ffffff"
+        });
+        
+        // Fetch complete domain data in background
+        const domainData = await fetchDomainDataWithCache(domain);
+        setTheme(domainData);
+      } catch (error) {
+        console.error('Error loading theme:', error);
+        setTheme({
+          logo: "https://cdn.vnoc.com/images/logo/logo-AgentDao-onblack.svg",
+          primaryColor: "#000000",
+          secondaryColor: "#ffffff"
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  const { logo } = theme;
+    loadTheme();
+  }, [domain, setTheme]);
+
+  const { logo } = theme || {};
   const capitalizedDomain = capitalizeDomain(domain);
 
   return (

@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { ENV_VAR, getEnvVar } from "@/lib/getEnvVar";
 import { fetcher } from "@/lib/hooks/useADAOFetcher";
 
+export const dynamic = 'force-dynamic';
+
 const baseURL = getEnvVar(ENV_VAR.API_URL_ADAO);
 
 async function handleRequest(req, method) {
