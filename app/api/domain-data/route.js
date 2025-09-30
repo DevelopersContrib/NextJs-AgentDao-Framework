@@ -12,8 +12,17 @@ export async function GET(request) {
       return NextResponse.json({ error: 'Domain parameter is required' }, { status: 400 });
     }
 
-    // Get domain data with server-side caching
-    const data = await getData();
+    // Fetch domain-specific data
+    let data;
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_CONTRIB_API1 || "https://api1.contrib.co/v2/domains/getdomainconfig?key=5c1bde69a9e783c7edc2e603d8b25023";
+      const url = apiUrl + `&domain=${domain}`;
+      const response = await fetch(url);
+      data = await response.json();
+    } catch (error) {
+      console.error('Error fetching domain data:', error);
+      data = { data: {} };
+    }
     
     // Extract and format theme data
     const themeData = {

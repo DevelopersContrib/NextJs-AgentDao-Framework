@@ -5,7 +5,7 @@ import Image from "next/image";
 import { User, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useThemeStore } from "@/lib/store/useThemeStore";
-import { fetchDomainDataWithCache, getCachedLogo } from "@/lib/domain-cache";
+import { fetchDomainDataWithCache, getCachedLogo, getCachedDomainData } from "@/lib/domain-cache";
 
 // Helper function to capitalize the first letter and remove the domain extension
 const capitalizeDomain = (domain) => {
@@ -22,21 +22,37 @@ const Header = ({ domain, setShowTopHeader }) => {
   useEffect(() => {
     const loadTheme = async () => {
       try {
-        // Get cached logo immediately for instant display
+        // First, check if we have cached data for this domain
+        const cachedDomainData = getCachedDomainData(domain);
         const cachedLogo = getCachedLogo(domain);
+        
+        console.log('Checking cache for domain:', domain);
+        console.log('Cached domain data:', cachedDomainData);
+        console.log('Cached logo:', cachedLogo);
+        
+        if (cachedDomainData && cachedLogo) {
+          // Use cached data immediately if we have a valid logo
+          console.log('Using cached data for domain:', domain);
+          setTheme(cachedDomainData);
+          setIsLoading(false);
+          return;
+        }
+        
+        // If no cached data or no valid logo, set theme without logo (will show text)
         setTheme({
-          logo: cachedLogo,
+          logo: null, // No logo, will show capitalized text
           primaryColor: "#000000",
           secondaryColor: "#ffffff"
         });
         
-        // Fetch complete domain data in background
+        // Fetch fresh domain data in background
         const domainData = await fetchDomainDataWithCache(domain);
+        console.log('Fetched fresh domain data for', domain, ':', domainData);
         setTheme(domainData);
       } catch (error) {
         console.error('Error loading theme:', error);
         setTheme({
-          logo: "https://cdn.vnoc.com/images/logo/logo-AgentDao-onblack.svg",
+          logo: null, // No logo, will show capitalized text
           primaryColor: "#000000",
           secondaryColor: "#ffffff"
         });
@@ -100,13 +116,21 @@ const Header = ({ domain, setShowTopHeader }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {logo ? (
+            {isLoading ? (
+              <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text tw-animate-pulse">
+                {capitalizedDomain}
+              </div>
+            ) : logo ? (
               <Image
                 src={logo}
-                alt="header-logo"
+                alt={`${capitalizedDomain} logo`}
                 width={150}
                 height={50}
-                layout="intrinsic"
+                className="tw-object-contain tw-max-h-12"
+                onError={(e) => {
+                  console.error('Logo failed to load:', logo);
+                  e.target.style.display = 'none';
+                }}
               />
             ) : (
               <div className="tw-text-capitalize tw-text-2xl tw-font-bold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
