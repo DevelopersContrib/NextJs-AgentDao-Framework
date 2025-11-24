@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export const dynamic = 'force-dynamic';
 import Navigation from "../components/Navigation";
+import HomeClient from "./HomeClient";
 import SectionTwo from "../components/SectionTwo";
 import SectionThree from "../components/SectionThree";
 import SectionFour from "../components/SectionFour";
@@ -37,6 +38,7 @@ export default async function Home() {
 
   return (
     <>
+      <HomeClient />
       <Header domain={domain} />
       <Hero />
       <Features />
