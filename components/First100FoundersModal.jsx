@@ -273,6 +273,41 @@ export const First100FoundersModal = ({
       }}
       data-testid="first100founders-modal"
     >
+      {/* Decorative overlays and blobs - moved here to always cover the full modal */}
+      <div
+        className="tw-absolute tw-inset-0"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(to right, rgba(234, 179, 8, 0.2), rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2))',
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+      >
+        <div
+          className="tw-absolute tw-top-0 tw-right-0 tw-w-96 tw-h-96 tw-rounded-full tw-blur-3xl"
+          style={{
+            background: 'linear-gradient(to bottom right, rgba(234, 179, 8, 0.3), rgba(249, 115, 22, 0.3))',
+          }}
+        ></div>
+        <div
+          className="tw-absolute tw-bottom-0 tw-left-0 tw-w-96 tw-h-96 tw-rounded-full tw-blur-3xl"
+          style={{
+            background: 'linear-gradient(to bottom right, rgba(168, 85, 247, 0.3), rgba(59, 130, 246, 0.3))',
+          }}
+        ></div>
+        <div
+          className="tw-absolute tw-top-1/2 tw-left-1/2 tw-transform -tw-translate-x-1/2 -tw-translate-y-1/2 tw-w-96 tw-h-96 tw-rounded-full tw-blur-3xl"
+          style={{
+            background: 'linear-gradient(to bottom right, rgba(236, 72, 153, 0.2), rgba(239, 68, 68, 0.2))',
+          }}
+        ></div>
+      </div>
       {/* Content Container - scrollable only if content overflows */}
       <div
         className="tw-flex tw-flex-col tw-items-center tw-p-4 md:tw-p-8 lg:tw-p-12 tw-pt-24 tw-overflow-y-auto"
@@ -285,41 +320,6 @@ export const First100FoundersModal = ({
           maxHeight: '100%',
         }}
       >
-        {/* Decorative overlays and blobs */}
-        <div
-          className="tw-absolute tw-inset-0"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            width: '100%',
-            height: '100%',
-            background: 'linear-gradient(to right, rgba(234, 179, 8, 0.2), rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2))',
-            zIndex: 1,
-            pointerEvents: 'none',
-          }}
-        >
-          <div
-            className="tw-absolute tw-top-0 tw-right-0 tw-w-96 tw-h-96 tw-rounded-full tw-blur-3xl"
-            style={{
-              background: 'linear-gradient(to bottom right, rgba(234, 179, 8, 0.3), rgba(249, 115, 22, 0.3))',
-            }}
-          ></div>
-          <div
-            className="tw-absolute tw-bottom-0 tw-left-0 tw-w-96 tw-h-96 tw-rounded-full tw-blur-3xl"
-            style={{
-              background: 'linear-gradient(to bottom right, rgba(168, 85, 247, 0.3), rgba(59, 130, 246, 0.3))',
-            }}
-          ></div>
-          <div
-            className="tw-absolute tw-top-1/2 tw-left-1/2 tw-transform -tw-translate-x-1/2 -tw-translate-y-1/2 tw-w-96 tw-h-96 tw-rounded-full tw-blur-3xl"
-            style={{
-              background: 'linear-gradient(to bottom right, rgba(236, 72, 153, 0.2), rgba(239, 68, 68, 0.2))',
-            }}
-          ></div>
-        </div>
         {/* Close Button */}
         <button
           onClick={handleClose}
