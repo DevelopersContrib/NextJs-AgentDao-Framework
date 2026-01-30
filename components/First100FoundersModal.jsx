@@ -164,11 +164,11 @@ export const First100FoundersModal = ({
 
   // No longer needed since we use <a> for external link
 
-  // Default benefits
+  // Default benefits (VentureOS Beta)
   const defaultBenefits = benefits || [
     { 
       icon: <Rocket className="w-8 h-8" />, 
-      text: 'Full platform access on January 15, 2026', 
+      text: 'Full Beta Launch - Now Live', 
       color: 'text-blue-300', 
       bg: 'from-blue-500/20 to-cyan-500/20' 
     },
@@ -337,7 +337,7 @@ export const First100FoundersModal = ({
             <div className="tw-inline-flex tw-items-center tw-space-x-2 tw-bg-gradient-to-r tw-from-yellow-400 tw-to-orange-500 tw-rounded-full tw-px-6 tw-py-2 tw-shadow-xl tw-mb-4 tw-border tw-border-yellow-300 tw-text-xs tw-font-bold tw-uppercase tw-tracking-wider">
               <Sparkles className="tw-w-5 tw-h-5 tw-text-white tw-animate-pulse" />
               <span className="tw-text-white tw-font-bold tw-text-xs tw-uppercase tw-tracking-wider">
-                {content?.title || 'Limited Time Offer'}
+                {content?.subtitle || 'We Are Now in Full Beta Launch'}
               </span>
             </div>
             
@@ -352,15 +352,12 @@ export const First100FoundersModal = ({
                   display: 'inline',
                 }}
               >
-                🎉 Be One of the {content?.subtitle || 'First 100 Founders!'}
+                {content?.title || 'VentureOS Beta Now Live'}
               </span>
             </h1>
             
-            <p className="tw-text-2xl md:tw-text-3xl lg:tw-text-4xl tw-text-white/90 tw-font-semibold tw-mb-4">
-              {content?.description || "Don't wait for the public launch!"}
-            </p>
-            <p className="tw-text-xl md:tw-text-2xl tw-text-white/70 tw-max-w-3xl tw-mx-auto">
-              Secure your spot now and get exclusive access to VentureOS platform with incredible benefits.
+            <p className="tw-text-xl md:tw-text-2xl tw-text-white/90 tw-font-semibold tw-max-w-3xl tw-mx-auto">
+              {content?.description || 'Join the beta and experience the future of business building with AI-powered tools. Full platform access is now available!'}
             </p>
           </div>
 
@@ -400,7 +397,7 @@ export const First100FoundersModal = ({
                 textDecoration: 'none',
               }}
             >
-              <span>{content?.ctaText || 'Reserve My Founder Spot'}</span>
+              <span>{content?.ctaText || 'Access Beta Now'}</span>
               <ArrowRight className="tw-w-6 tw-h-6 group-hover:tw-translate-x-2 tw-transition-transform" />
             </a>
             <button
@@ -413,7 +410,7 @@ export const First100FoundersModal = ({
 
           {/* Footer Note */}
           <p className="tw-text-center tw-text-white/60 tw-text-lg md:tw-text-xl tw-mt-8">
-            {content?.footerText || '🔥 Only 100 slots available • Act fast before they\'re gone!'}
+            {content?.footerText || 'Limited beta access • Join now to secure your spot!'}
           </p>
         </div>
       </div>
