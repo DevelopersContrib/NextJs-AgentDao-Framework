@@ -1,161 +1,143 @@
 "use client";
+import { motion } from "framer-motion";
+import {
+  Globe,
+  Bot,
+  Coins,
+  Database,
+  DollarSign,
+  TrendingUp,
+  Flame,
+  Lock,
+} from "lucide-react";
 
-const revenueSteps = [
+const steps = [
   {
-    id: 1,
+    step: "01",
     title: "Domain Minting",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="tw-text-green-400"
-      >
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-        <circle cx="9" cy="7" r="4"></circle>
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-      </svg>
-    ),
+    description:
+      "Mint premium AI-powered domains as NFTs on the blockchain with built-in utility and ownership rights.",
+    icon: Globe,
+    color: "#34d399",
   },
   {
-    id: 2,
+    step: "02",
     title: "Agent Activation",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="tw-text-blue-400"
-      >
-        <rect width="16" height="12" x="4" y="8" rx="2"></rect>
-        <path d="M2 14h2"></path>
-        <path d="M20 14h2"></path>
-        <path d="M15 13v2"></path>
-        <path d="M9 13v2"></path>
-      </svg>
-    ),
+    description:
+      "Activate autonomous AI agents tied to your domain for marketing, sales, and workflow automation.",
+    icon: Bot,
+    color: "#60a5fa",
   },
   {
-    id: 3,
-    title: "ESH Token Economy",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="tw-text-yellow-400"
-      >
-        <circle cx="8" cy="8" r="6"></circle>
-        <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
-        <path d="M7 6h1v4"></path>
-        <path d="m16.71 13.88.7.71-2.82 2.82"></path>
-      </svg>
-    ),
+    step: "03",
+    title: "Token Economy",
+    description:
+      "Earn ADAO tokens through agent activity, ecosystem participation, and value generation.",
+    icon: Coins,
+    color: "#fbbf24",
   },
   {
-    id: 4,
+    step: "04",
     title: "Staking & Rewards",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="tw-text-purple-400"
-      >
-        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-        <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
-        <path d="M3 12A9 3 0 0 0 21 12"></path>
-      </svg>
-    ),
+    description:
+      "Stake tokens to earn compounding rewards while helping secure and govern the protocol.",
+    icon: Database,
+    color: "#a78bfa",
   },
 ];
 
-const keyBenefits = [
-  { title: "Sustainable Revenue", icon: "dollar-sign" },
-  { title: "Passive Earnings", icon: "coins" },
-  { title: "Deflationary Model", icon: "bar-chart-3" },
-  { title: "Price Growth", icon: "lock" },
+const benefits = [
+  { title: "Sustainable Revenue", icon: DollarSign, color: "#34d399" },
+  { title: "Passive Earnings", icon: TrendingUp, color: "#60a5fa" },
+  { title: "Deflationary Model", icon: Flame, color: "#fbbf24" },
+  { title: "Value Locked", icon: Lock, color: "#a78bfa" },
 ];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.12, ease: "easeOut" },
+  }),
+};
 
 const Revenue = () => {
   return (
-    <section className="tw-bg-gray-9001 tw-text-white tw-py-16">
-      <div className="tw-container tw-mx-auto tw-w-4/5 tw-text-center">
-        <h2 className="tw-text-3xl tw-font-extrabold tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-text-transparent tw-bg-clip-text">
-          AgentDAO Revenue Flow
-        </h2>
+    <section className="revenue-section tw-relative tw-overflow-hidden tw-py-24 md:tw-py-32">
+      <div className="tw-relative tw-z-10 tw-max-w-6xl tw-mx-auto tw-px-5">
+        {/* Section header */}
+        <motion.div
+          className="tw-text-center tw-mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="features-label">How It Works</span>
+          <h2 className="features-heading tw-mt-4">
+            The AgentDAO{" "}
+            <span className="hero-gradient-text">Revenue Flow</span>
+          </h2>
+          <p className="tw-text-gray-400 tw-mt-4 tw-max-w-2xl tw-mx-auto tw-text-base md:tw-text-lg tw-leading-relaxed">
+            A self-sustaining economy where domains, AI agents, and token
+            holders mutually benefit from increased adoption and activity.
+          </p>
+        </motion.div>
 
-        <div className="tw-mt-8 tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-6">
-          {revenueSteps.map((step) => (
-            <div
-              key={step.id}
-              className="tw-border tw-border-gray-600 tw-p-6 tw-rounded-2xl tw-text-center tw-flex tw-flex-col tw-items-center"
+        {/* Steps */}
+        <div className="revenue-steps tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-5 tw-relative">
+          <div className="revenue-connector" aria-hidden="true" />
+
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.step}
+              className="revenue-card"
+              style={{ "--step-color": step.color }}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={cardVariants}
             >
-              {step.icon}
-              <span className="tw-text-sm tw-mt-2">{step.title}</span>
-            </div>
+              <div className="revenue-step-number">{step.step}</div>
+              <div className="revenue-icon-wrapper">
+                <step.icon size={22} strokeWidth={1.8} color={step.color} />
+              </div>
+              <h3 className="tw-text-base tw-font-semibold tw-text-white tw-mt-4">
+                {step.title}
+              </h3>
+              <p className="tw-text-sm tw-text-gray-400 tw-mt-2 tw-leading-relaxed">
+                {step.description}
+              </p>
+            </motion.div>
           ))}
         </div>
 
-        <div className="tw-border tw-border-gray-600 tw-rounded-2xl tw-mt-12 tw-p-6">
-          <h3 className="tw-text-xl tw-font-bold tw-text-center tw-text-blue-400">
+        {/* Benefits */}
+        <motion.div
+          className="revenue-benefits tw-mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h3 className="tw-text-sm tw-font-semibold tw-text-gray-500 tw-uppercase tw-tracking-wider tw-text-center tw-mb-6">
             Key Benefits
           </h3>
-          <div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-mt-4">
-            {keyBenefits.map((benefit, index) => (
-              <div key={index} className="tw-flex tw-items-center tw-space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="tw-text-yellow-400"
-                >
-                  <use href={`#${benefit.icon}`} />
-                </svg>
-                <span className="tw-text-sm">{benefit.title}</span>
+          <div className="tw-flex tw-flex-wrap tw-justify-center tw-gap-3">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit.title}
+                className="benefit-pill"
+                style={{ "--pill-color": benefit.color }}
+              >
+                <benefit.icon size={16} strokeWidth={2} color={benefit.color} />
+                <span>{benefit.title}</span>
               </div>
             ))}
           </div>
-        </div>
-
-       <div className="tw-text-center tw-mt-8">
-          <p className="tw-text-gray-400">
-            AgentDAO creates a self-sustaining economy where domains, AI agents,
-            and token holders mutually benefit from increased adoption and
-            activity.
-          </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

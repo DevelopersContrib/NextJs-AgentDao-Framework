@@ -1,42 +1,70 @@
 "use client";
+import { motion } from "framer-motion";
 
 const Cta = () => {
   return (
-    <section className="tw-py-32 tw-text-center">
-      <div className="tw-container tw-mx-auto tw-px-4">
-        <h2 className="tw-text-4xl tw-font-extrabold tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-blue-400 tw-to-purple-600 tw-animate-gradient-text">
-          Ready to Join the Future?
-        </h2>
-        <p className="tw-text-xl tw-text-gray-400 tw-mb-12 tw-max-w-2xl tw-mx-auto">
-          Don&apos;t miss out on the next generation of digital assets. Join AgentDAO today.
-        </p>
-        <a
-          href="https://agentdao.com/"
-          className="tw-inline-block tw-bg-gradient-to-r tw-from-pink-500 tw-via-red-500 tw-to-yellow-500 tw-text-white tw-font-semibold tw-py-4 tw-px-8 tw-rounded-full tw-shadow-lg hover:tw-scale-105 hover:tw-shadow-xl transition-transform duration-300 animate-pulse"
-          target="_blank"
+    <section className="cta-section tw-relative tw-overflow-hidden tw-py-28 md:tw-py-36 tw-text-center">
+      <div className="cta-glow" aria-hidden="true" />
+
+      <div className="tw-relative tw-z-10 tw-max-w-3xl tw-mx-auto tw-px-5">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
-          Get Started Now
-        </a>
+          <span className="features-label">Get Started</span>
+          <h2 className="features-heading tw-mt-5">
+            Ready to Join{" "}
+            <span className="hero-gradient-text">the Future?</span>
+          </h2>
+          <p className="tw-text-gray-400 tw-mt-5 tw-text-base md:tw-text-lg tw-leading-relaxed tw-max-w-xl tw-mx-auto">
+            Don&apos;t miss out on the next generation of digital assets. Join
+            AgentDAO today and start building with autonomous AI agents.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="tw-mt-10 tw-flex tw-flex-wrap tw-justify-center tw-gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <a
+            href="https://agentdao.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn-primary"
+          >
+            Get Started Now
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://adao.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn-outline"
+          >
+            Buy ADAO Token
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Cta;
-
-<style jsx>{`
-  .tw-animate-gradient-text {
-    background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f1c40f);
-    background-size: 200% 200%;
-    animation: gradient-text 3s ease infinite;
-  }
-
-  @keyframes gradient-text {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
-`}</style>
