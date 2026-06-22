@@ -64,6 +64,13 @@ export default async function RootLayout({ children }) {
           ""
         )}
         <Script
+          id="vnoc-analytics"
+          src="https://analytics.vnoc.com/tracker.js"
+          data-endpoint="https://analytics.vnoc.com/"
+          data-domain={domain}
+          strategy="afterInteractive"
+        ></Script>
+        <Script
           id="g-manager"
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${c.data.accountGA}`}

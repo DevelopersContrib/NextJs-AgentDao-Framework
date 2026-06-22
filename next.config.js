@@ -54,12 +54,20 @@ const nextConfig = {
         hostname: 'cdn.vnoc.com',
       },
       {
+        protocol: 'http',
+        hostname: 'cdn.vnoc.com',
+      },
+      {
         protocol: 'https',
         hostname: 'vnoclogos.s3-us-west-1.amazonaws.com',
       },
       {
         protocol: 'https',
         hostname: 'vnocassets.s3.us-east-1.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vnoc-brand-assets.s3.us-west-2.amazonaws.com',
       },
       {
         protocol: 'https',
