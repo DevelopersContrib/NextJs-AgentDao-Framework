@@ -63,13 +63,12 @@ export default async function RootLayout({ children }) {
         ) : (
           ""
         )}
-        <Script
-          id="vnoc-analytics"
+        <script
           src="https://analytics.vnoc.com/tracker.js"
           data-endpoint="https://analytics.vnoc.com/"
           data-domain={domain}
-          strategy="afterInteractive"
-        ></Script>
+          defer
+        ></script>
         <Script
           id="g-manager"
           async
